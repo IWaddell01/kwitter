@@ -2,6 +2,8 @@
 
 Notes and instruction. A place for notation.
 
+- added development branch
+
 ## Description
 
 Kwitter team project. A reference guide for GIT, + etc.
