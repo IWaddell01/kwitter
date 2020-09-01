@@ -73,18 +73,6 @@ class API {
       throw err;
     }
   }
-
-  // Example call to API End Point
-
-  // async exampleSomething() {
-  //   try {
-  //     const data = await this.axiosInstance.get("/exampleSomething");
-  //     return data
-  //   } catch (err) {
-  //     helpMeInstructor(err);
-  //     throw err;
-  //   }
-  // }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
