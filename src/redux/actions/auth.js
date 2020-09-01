@@ -38,6 +38,23 @@ const logout = () => async (dispatch, getState) => {
     dispatch({ type: LOGOUT });
   }
 };
+
+// Example Auth Call connection from exampleSomething in api.js
+
+// const exampleSomething = (data) => async (dispatch, getState) => {
+//   try {
+//     dispatch({ type: LOGIN });
+//     const payload = await api.exampleSomething(data);
+//     // This is how you woud debug the response to a request
+//     // console.log({ result })
+//     dispatch({ type: LOGIN_SUCCESS, payload });
+//   } catch (err) {
+//     dispatch({
+//       type: LOGIN_FAILURE,
+//       payload: err.message,
+//     });
+//   }
+// };
 // END AUTH ACTIONS
 
 export const actions = {
