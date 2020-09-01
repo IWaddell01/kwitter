@@ -35,6 +35,7 @@ class API {
     this.axiosInstance = axiosInstance;
   }
 
+  // login
   async login({ username, password }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
@@ -48,9 +49,25 @@ class API {
     }
   }
 
+  // logout
   async logout() {
     try {
       await this.axiosInstance.get("/auth/logout");
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // create new user
+  async createNewUser({ username, displayName, password }) {
+    try {
+      const result = await this.axiosInstance.post("/users", {
+        username,
+        displayName,
+        password,
+      });
+      return result;
     } catch (err) {
       helpMeInstructor(err);
       throw err;
