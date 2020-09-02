@@ -21,6 +21,12 @@ export const SignUp = ({ signUp }) => {
   const handleSignUp = (event) => {
     event.preventDefault();
     dispatch(actions.signUp(state));
+    // clear out inputs on submit
+    setState({
+      username: "",
+      displayName: "",
+      password: "",
+    });
   };
 
   const handleChange = (event) => {
