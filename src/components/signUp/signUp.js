@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actions } from "../../redux/actions/auth";
+import { actions } from "../../redux/actions/signUp";
 import { Loader } from "../loader";
-import "./signUp.css";
+import "./SignUp.css";
 
-export const SignUpForm = ({ signUp }) => {
+export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,
     error: state.auth.error,
@@ -18,7 +18,7 @@ export const SignUpForm = ({ signUp }) => {
     password: "",
   });
 
-  const handlesignUp = (event) => {
+  const handleSignUp = (event) => {
     event.preventDefault();
     dispatch(actions.signUp(state));
   };
@@ -31,7 +31,7 @@ export const SignUpForm = ({ signUp }) => {
 
   return (
     <React.Fragment>
-      <form id="create-new-user-form" onSubmit={handlesignUp}>
+      <form id="sign-up" onSubmit={handleSignUp}>
         <label htmlFor="username">Email (will be your username)</label>
         <input
           type="text"
@@ -45,9 +45,9 @@ export const SignUpForm = ({ signUp }) => {
         <label htmlFor="displayName">Display Name</label>
         <input
           type="text"
-          name="username"
+          name="displayName"
           placeholder="John Lennon"
-          value={state.username}
+          value={state.displayName}
           autoFocus
           required
           onChange={handleChange}
