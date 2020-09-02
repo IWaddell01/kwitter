@@ -62,7 +62,7 @@ export const SignUp = ({ signUp }) => {
         <input
           type="password"
           name="password"
-          placeholder="me@everythingisawesome.com"
+          placeholder="b3@tl35Lyr4Cs"
           value={state.password}
           required
           onChange={handleChange}
