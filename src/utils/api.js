@@ -60,7 +60,7 @@ class API {
   }
 
   // create new user
-  async createNewUser({ username, displayName, password }) {
+  async signUp({ username, displayName, password }) {
     try {
       const result = await this.axiosInstance.post("/users", {
         username,

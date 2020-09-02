@@ -23,7 +23,7 @@ export const Navigation = () => (
         exact
         path="/signup"
         redirectIfAuthenticated
-        component={**FROM components/createNewUser**}
+        component={**FROM components/signUp**}
       /> */}
 
       <ConnectedRoute path="*" component={NotFoundScreen} />

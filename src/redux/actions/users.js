@@ -12,10 +12,10 @@ export const CREATE_NEW_USER_FAILURE = "AUTH/CREATE_NEW_USER_FAILURE";
 */
 
 // create new user
-const createNewUser = (credentials) => async (dispatch, getState) => {
+const signUp = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: CREATE_NEW_USER });
-    const payload = await api.createNewUser(credentials);
+    const payload = await api.signUp(credentials);
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
     // console.log({ result })
     dispatch({ type: CREATE_NEW_USER_SUCCESS, payload });
@@ -30,5 +30,5 @@ const createNewUser = (credentials) => async (dispatch, getState) => {
 // END AUTH ACTIONS
 
 export const actions = {
-  createNewUser,
+  signUp,
 };

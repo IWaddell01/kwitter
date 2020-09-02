@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   error: "",
 };
 
-export const createNewUserReducer = (state = { ...INITIAL_STATE }, action) => {
+export const signUpReducer = (state = { ...INITIAL_STATE }, action) => {
   switch (action.type) {
     case CREATE_NEW_USER:
       return {
