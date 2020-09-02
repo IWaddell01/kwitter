@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
-import "./LoginForm.css";
+import "./createNewUser.css";
 
-export const LoginForm = ({ login }) => {
+export const createNewUserForm = ({ login }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,
     error: state.auth.error,
@@ -14,12 +14,13 @@ export const LoginForm = ({ login }) => {
 
   const [state, setState] = useState({
     username: "",
+    displayName: "",
     password: "",
   });
 
-  const handleLogin = (event) => {
+  const handleCreateNewUser = (event) => {
     event.preventDefault();
-    dispatch(actions.login(state));
+    dispatch(actions.createNewUser(state));
   };
 
   const handleChange = (event) => {
@@ -30,12 +31,20 @@ export const LoginForm = ({ login }) => {
 
   return (
     <React.Fragment>
-      <form id="login-form" onSubmit={handleLogin}>
+      <form id="create-new-user-form" onSubmit={handleCreateNewUser}>
         <label htmlFor="username">Email (will be your username)</label>
         <input
           type="text"
           name="username"
-          placeholder="me@everythingisawesome.com"
+          value={state.username}
+          autoFocus
+          required
+          onChange={handleChange}
+        />
+        <label htmlFor="displayName">Display Name</label>
+        <input
+          type="text"
+          name="username"
           value={state.username}
           autoFocus
           required
@@ -44,7 +53,6 @@ export const LoginForm = ({ login }) => {
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="b3@tl35Lyr4Cs"
           name="password"
           value={state.password}
           required

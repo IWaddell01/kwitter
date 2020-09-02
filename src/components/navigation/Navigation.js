@@ -18,6 +18,14 @@ export const Navigation = () => (
         path="/profiles/:username"
         component={ProfileScreen}
       />
+
+{/* <ConnectedRoute
+        exact
+        path="/signup"
+        redirectIfAuthenticated
+        component={**FROM components/createNewUser**}
+      /> */}
+
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
