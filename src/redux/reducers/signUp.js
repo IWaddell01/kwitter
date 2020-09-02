@@ -1,10 +1,4 @@
-// TODO: implement in screens/user view
-
-import {
-  CREATE_NEW_USER,
-  CREATE_NEW_USER_SUCCESS,
-  CREATE_NEW_USER_FAILURE,
-} from "../actions";
+import { SIGN_UP, SIGN_UP_SUCCESS, SIGN_UP_FAILURE } from "../actions";
 
 // INITIAL STATE
 const INITIAL_STATE = {
@@ -16,12 +10,12 @@ const INITIAL_STATE = {
 
 export const signUpReducer = (state = { ...INITIAL_STATE }, action) => {
   switch (action.type) {
-    case CREATE_NEW_USER:
+    case SIGN_UP:
       return {
         ...INITIAL_STATE,
         loading: true,
       };
-    case CREATE_NEW_USER_SUCCESS:
+    case SIGN_UP_SUCCESS:
       const { username, token } = action.payload;
       return {
         ...INITIAL_STATE,
@@ -29,7 +23,7 @@ export const signUpReducer = (state = { ...INITIAL_STATE }, action) => {
         username,
         loading: false,
       };
-    case CREATE_NEW_USER_FAILURE:
+    case SIGN_UP_FAILURE:
       return {
         ...INITIAL_STATE,
         error: action.payload,

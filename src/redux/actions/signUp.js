@@ -1,9 +1,9 @@
 import api from "../../utils/api";
 
 // AUTH CONSTANTS
-export const CREATE_NEW_USER = "AUTH/CREATE_NEW_USER";
-export const CREATE_NEW_USER_SUCCESS = "AUTH/CREATE_NEW_USER_SUCCESS";
-export const CREATE_NEW_USER_FAILURE = "AUTH/CREATE_NEW_USER_FAILURE";
+export const SIGN_UP = "AUTH/SIGN_UP";
+export const SIGN_UP_SUCCESS = "AUTH/SIGN_UP_SUCCESS";
+export const SIGN_UP_FAILURE = "AUTH/SIGN_UP_FAILURE";
 
 /*
  AUTH ACTIONS (this is a thunk....)
@@ -11,17 +11,17 @@ export const CREATE_NEW_USER_FAILURE = "AUTH/CREATE_NEW_USER_FAILURE";
  If you need access to your store you may call getState()
 */
 
-// create new user
+// sign up
 const signUp = (credentials) => async (dispatch, getState) => {
   try {
-    dispatch({ type: CREATE_NEW_USER });
+    dispatch({ type: SIGN_UP });
     const payload = await api.signUp(credentials);
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
     // console.log({ result })
-    dispatch({ type: CREATE_NEW_USER_SUCCESS, payload });
+    dispatch({ type: SIGN_UP_SUCCESS, payload });
   } catch (err) {
     dispatch({
-      type: CREATE_NEW_USER_FAILURE,
+      type: SIGN_UP_FAILURE,
       payload: err.message,
     });
   }

@@ -4,7 +4,7 @@ import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 import "./signUp.css";
 
-export const signUpForm = ({ signUp }) => {
+export const SignUpForm = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,
     error: state.auth.error,
