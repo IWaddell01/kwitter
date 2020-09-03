@@ -74,7 +74,7 @@ class API {
     }
   }
 
-  // sign up
+  // messages feed
   async messagesFeed({ id, text, username, createdAt, likes }) {
     try {
       const result = await this.axiosInstance.get("/messages", {
