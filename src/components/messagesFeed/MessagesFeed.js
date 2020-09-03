@@ -20,9 +20,14 @@ export const MessagesFeed = ({ messagesFeed }) => {
     likes: [],
   });
 
+  //   const messagesFeed = () => {
+  //     dispatch(actions.messagesFeed(state));
+  //   };
+
   return (
     <React.Fragment>
       {/* start here */}
+      {console.log(messagesFeed)}
       {/* end here */}
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
