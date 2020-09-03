@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { actions } from "../../redux/actions/auth";
+import { actions } from "../../redux/actions/";
+
 import "./Menu.css";
 
 export const Menu = () => {
@@ -14,7 +15,7 @@ export const Menu = () => {
       <div id="menu-links">
         {isAuthenticated ? (
           <>
-            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/messages">Message Feed</Link>
             <Link to="/" onClick={logout}>
               Logout
             </Link>

@@ -5,6 +5,7 @@ import {
   ProfileScreen,
   SignUpScreen,
   NotFoundScreen,
+  MessagesScreen
 } from "../../screens";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
@@ -29,6 +30,13 @@ export const Navigation = () => (
         path="/signup"
         redirectIfAuthenticated
         component={SignUpScreen}
+      />
+
+      <ConnectedRoute
+        exact
+        isProtected
+        path="/messages"
+        component={MessagesScreen}
       />
 
       <ConnectedRoute path="*" component={NotFoundScreen} />

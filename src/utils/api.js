@@ -74,6 +74,19 @@ class API {
     }
   }
 }
+  // message feed
+async messages() {
+  try {
+    const messages = await this.axiosInstance.get("/messages");
+    console.log(messages)
+    return messages
+  } catch (err) {
+    helpMeInstructor(err);
+    throw err;
+  }
+}
+
+
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 
