@@ -5,8 +5,8 @@ import { MessageFeedContainer } from "../components/messageFeed";
 export const MessageFeedScreen = () => (
   <>
     <MenuContainer />
-    <h2>Posts</h2>
-    <p>posts soon to be here</p>
+    <h2>Message Feed</h2>
+    <p>this is from the MessageFeedScreen</p>
     <MessageFeedContainer />
   </>
 );

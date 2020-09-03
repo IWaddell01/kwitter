@@ -5,12 +5,6 @@ export const SIGN_UP = "AUTH/SIGN_UP";
 export const SIGN_UP_SUCCESS = "AUTH/SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "AUTH/SIGN_UP_FAILURE";
 
-/*
- AUTH ACTIONS (this is a thunk....)
- THUNKS: --> https://github.com/reduxjs/redux-thunk#whats-a-thunk
- If you need access to your store you may call getState()
-*/
-
 // sign up
 const signUp = (credentials) => async (dispatch, getState) => {
   try {
