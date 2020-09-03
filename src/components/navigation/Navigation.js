@@ -3,7 +3,7 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import {
   HomeScreen,
   ProfileScreen,
-  MessagesFeedScreen,
+  MessageFeedScreen,
   SignUpScreen,
   NotFoundScreen,
 } from "../../screens";
@@ -28,11 +28,11 @@ export const Navigation = () => (
       />
       {/* signup page */}
       <ConnectedRoute exact path="/signup" component={SignUpScreen} />
-      {/* messages feed page */}
+      {/* message feed page */}
       <ConnectedRoute
         exact
-        path="/messagesfeed"
-        component={MessagesFeedScreen}
+        path="/messagefeed"
+        component={MessageFeedScreen}
       />
 
       <ConnectedRoute path="*" component={NotFoundScreen} />

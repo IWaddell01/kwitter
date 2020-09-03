@@ -1,12 +1,12 @@
 import React from "react";
 import { MenuContainer } from "../components";
-import { MessagesFeedContainer } from "../components/messagesFeed";
+import { MessageFeedContainer } from "../components/messageFeed";
 
-export const MessagesFeedScreen = () => (
+export const MessageFeedScreen = () => (
   <>
     <MenuContainer />
     <h2>Posts</h2>
     <p>posts soon to be here</p>
-    <MessagesFeedContainer />
+    <MessageFeedContainer />
   </>
 );

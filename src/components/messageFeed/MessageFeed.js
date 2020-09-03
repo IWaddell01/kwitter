@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actions } from "../../redux/actions/messagesFeed";
+// import { actions } from "../../redux/actions/messageFeed";
 import { Loader } from "../loader";
-import "./MessagesFeed.css";
+import "./MessageFeed.css";
 
-export const MessagesFeed = ({ messagesFeed }) => {
+export const MessageFeed = ({ messageFeed }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,
     error: state.auth.error,
@@ -20,14 +20,15 @@ export const MessagesFeed = ({ messagesFeed }) => {
     likes: [],
   });
 
-  //   const messagesFeed = () => {
-  //     dispatch(actions.messagesFeed(state));
+  //   const messageFeed = () => {
+  //     dispatch(actions.messageFeed(state));
   //   };
 
   return (
     <React.Fragment>
       {/* start here */}
-      {console.log(messagesFeed)}
+      {console.log(messageFeed)}
+      this is the messageFeedContainer
       {/* end here */}
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}

@@ -74,8 +74,8 @@ class API {
     }
   }
 
-  // messages feed
-  async messagesFeed({ id, text, username, createdAt, likes }) {
+  // message feed
+  async messageFeed({ id, text, username, createdAt, likes }) {
     try {
       const result = await this.axiosInstance.get("/messages", {
         id,
