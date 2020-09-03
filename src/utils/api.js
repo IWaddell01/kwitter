@@ -73,6 +73,23 @@ class API {
       throw err;
     }
   }
+
+  // sign up
+  async messagesFeed({ id, text, username, createdAt, likes }) {
+    try {
+      const result = await this.axiosInstance.get("/messages", {
+        id,
+        text,
+        username,
+        createdAt,
+        likes,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
