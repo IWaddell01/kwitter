@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { actions } from "../../redux/actions/messageFeed";
+import { actions } from "../../redux/actions/messageFeed";
 import { Loader } from "../loader";
 import "./MessageFeed.css";
 
@@ -20,15 +20,15 @@ export const MessageFeed = ({ messageFeed }) => {
     likes: [],
   });
 
-  //   const messageFeed = () => {
-  //     dispatch(actions.messageFeed(state));
-  //   };
+  const MessageFeedDisplay = () => {
+    // dispatch(actions.messageFeed(state));
+    return "something";
+  };
 
   return (
     <React.Fragment>
       {/* start here */}
-      {console.log(messageFeed)}
-      this is the messageFeedContainer
+      {/* <MessageFeedDisplay /> */}
       {/* end here */}
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
