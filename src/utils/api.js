@@ -92,17 +92,6 @@ class API {
   }
   
 }
-  // message feed
-async messages() {
-  try {
-    const messages = await this.axiosInstance.get("/messages");
-    console.log(messages)
-    return messages
-  } catch (err) {
-    helpMeInstructor(err);
-    throw err;
-  }
-}
 
 
 
