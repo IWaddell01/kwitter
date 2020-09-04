@@ -4,6 +4,8 @@ import { actions } from "../../redux/actions/signUp";
 import { Loader } from "../loader";
 import "./SignUp.css";
 
+import "rsuite/dist/styles/rsuite-default.css";
+
 export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,
@@ -21,6 +23,12 @@ export const SignUp = ({ signUp }) => {
   const handleSignUp = (event) => {
     event.preventDefault();
     dispatch(actions.signUp(state));
+    // clear out inputs on submit
+    setState({
+      username: "",
+      displayName: "",
+      password: "",
+    });
   };
 
   const handleChange = (event) => {
@@ -56,7 +64,7 @@ export const SignUp = ({ signUp }) => {
         <input
           type="password"
           name="password"
-          placeholder="me@everythingisawesome.com"
+          placeholder="b3@tl35Lyr4Cs"
           value={state.password}
           required
           onChange={handleChange}
