@@ -74,7 +74,7 @@ class API {
     }
   }
 
-  // message feed
+  // MESSAGES FEED
   async messageFeed() {
     try {
       const result = await this.axiosInstance.get("/messages");
@@ -85,10 +85,10 @@ class API {
     }
   }
 
-  async getUsers() {
+  async users() {
     try {
       const result = await this.axiosInstance.get("/users");
-      console.log(result)
+      // console.log(result)
       return result;
     } catch (err) {
       helpMeInstructor(err);

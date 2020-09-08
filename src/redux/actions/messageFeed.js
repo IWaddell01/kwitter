@@ -5,7 +5,7 @@ export const MESSAGE_FEED = "USERS/MESSAGE_FEED";
 export const MESSAGE_FEED_SUCCESS = "USERS/MESSAGE_FEED_SUCCESS";
 export const MESSAGE_FEED_FAILURE = "USERS/MESSAGE_FEED_FAILURE";
 
-// message feed
+// MESSAGES FEED
 const messageFeed = (message) => async (dispatch, getState) => {
   try {
     dispatch({ type: MESSAGE_FEED });
