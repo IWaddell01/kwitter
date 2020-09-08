@@ -1,9 +1,9 @@
 import api from "../../utils/api";
 
 // AUTH CONSTANTS
-export const MESSAGE_FEED = "MESSAGE_FEED/MESSAGE_FEED";
-export const MESSAGE_FEED_SUCCESS = "MESSAGE_FEED/MESSAGE_FEED_SUCCESS";
-export const MESSAGE_FEED_FAILURE = "MESSAGE_FEED/MESSAGE_FEED_FAILURE";
+export const MESSAGE_FEED = "USERS/MESSAGE_FEED";
+export const MESSAGE_FEED_SUCCESS = "USERS/MESSAGE_FEED_SUCCESS";
+export const MESSAGE_FEED_FAILURE = "USERS/MESSAGE_FEED_FAILURE";
 
 // message feed
 const messageFeed = (message) => async (dispatch, getState) => {
