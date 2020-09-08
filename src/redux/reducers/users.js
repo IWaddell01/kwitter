@@ -1,8 +1,9 @@
 import { USERS, USERS_SUCCESS, USERS_FAILURE } from "../actions";
-import { actions } from "./../actions/auth";
 
 const INITIAL_STATE = {
   users: [],
+  count: 0,
+  statusCode: 0,
   loading: false,
   errors: "",
 };
@@ -19,6 +20,8 @@ export const usersReducer = (state = { ...INITIAL_STATE }, action) => {
       return {
         ...INITIAL_STATE,
         users: action.payload,
+        count: 0,
+        statusCode: 0,
         loading: false,
       };
 
