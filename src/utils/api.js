@@ -59,7 +59,7 @@ class API {
     }
   }
 
-  // sign up
+  // SIGN UP
   async signUp({ username, displayName, password }) {
     try {
       const result = await this.axiosInstance.post("/users", {
@@ -77,20 +77,13 @@ class API {
   // message feed
   async messageFeed({ id, text, username, createdAt, likes }) {
     try {
-      const result = await this.axiosInstance.get("/messages", {
-        id,
-        text,
-        username,
-        createdAt,
-        likes,
-      });
+      const result = await this.axiosInstance.get("/messages");
       return result;
     } catch (err) {
       helpMeInstructor(err);
       throw err;
     }
   }
-  
 }
 
 
