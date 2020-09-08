@@ -75,7 +75,7 @@ class API {
   }
 
   // message feed
-  async messageFeed({ id, text, username, createdAt, likes }) {
+  async messageFeed() {
     try {
       const result = await this.axiosInstance.get("/messages");
       return result;
@@ -84,9 +84,18 @@ class API {
       throw err;
     }
   }
+
+  async getUsers() {
+    try {
+      const result = await this.axiosInstance.get("/users");
+      console.log(result)
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
 }
-
-
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 

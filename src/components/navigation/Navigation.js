@@ -6,6 +6,7 @@ import {
   MessageFeedScreen,
   SignUpScreen,
   NotFoundScreen,
+  UsersScreen
 } from "../../screens";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 
@@ -34,6 +35,12 @@ export const Navigation = () => (
         path="/messagefeed"
         component={MessageFeedScreen}
       />
+
+      <ConnectedRoute 
+        exact 
+        path="/users"
+        component={UsersScreen}
+      /> 
 
 
       <ConnectedRoute path="*" component={NotFoundScreen} />

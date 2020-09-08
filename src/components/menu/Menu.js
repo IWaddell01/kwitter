@@ -18,6 +18,7 @@ export const Menu = () => {
         {isAuthenticated ? (
           <>
             <Link to="/messagefeed">Message Feed</Link>
+            <Link to ="/users">Users</Link>
             <Link to="/" onClick={logout}>
               Logout
             </Link>
