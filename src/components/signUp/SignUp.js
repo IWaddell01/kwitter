@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actions } from "../../redux/actions/signUp";
+import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 import "./SignUp.css";
 
