@@ -59,7 +59,7 @@ class API {
     }
   }
 
-  // sign up
+  // SIGN UP
   async signUp({ username, displayName, password }) {
     try {
       const result = await this.axiosInstance.post("/users", {

@@ -5,7 +5,7 @@ export const SIGN_UP = "AUTH/SIGN_UP";
 export const SIGN_UP_SUCCESS = "AUTH/SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "AUTH/SIGN_UP_FAILURE";
 
-// sign up
+// SIGN UP
 const signUp = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: SIGN_UP });
