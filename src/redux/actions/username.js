@@ -1,13 +1,13 @@
 import api from "../../utils/api";
 
-export const USERNAME = "USERNAME";
+export const USERNAME = "USERS";
 export const USERNAME_SUCCESS = "USERNAME_SUCCESS";
 export const USERNAME_FAILURE = "USERNAME_FAILURE";
 
-export const messages = () => async (dispatch, getState) => {
+export const username = () => async (dispatch, getState) => {
   try {
     dispatch({ type: USERNAME });
-    const payload = await api.messages();
+    const payload = await api.username();
     dispatch({ type: USERNAME_SUCCESS, payload });
   } catch (err) {
     dispatch({
@@ -15,8 +15,4 @@ export const messages = () => async (dispatch, getState) => {
       payload: err.message,
     });
   }
-};
-
-export const actions = {
-  messages,
 };

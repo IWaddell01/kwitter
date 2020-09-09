@@ -24,7 +24,7 @@ export const usersReducer = (state = { ...INITIAL_STATE }, action) => {
       return {
         ...INITIAL_STATE,
         loading: false,
-        users: [],
+        users: null,
         error: action.payload,
       };
 
