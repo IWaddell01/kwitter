@@ -89,7 +89,7 @@ class API {
   // Username
   async username(username) {
     try {
-      const result = await this.axiosInstance.get("/users/{username}", {
+      const result = await this.axiosInstance.get("/users/newuser", {
         username,
       });
       return result;

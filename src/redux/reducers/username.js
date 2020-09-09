@@ -1,9 +1,9 @@
 import { USERNAME, USERNAME_SUCCESS, USERNAME_FAILURE } from "../actions";
 
 const INITIAL_STATE = {
-  username: "",
   loading: false,
-  errors: "",
+  user: null,
+  error: "",
 };
 
 export const usernameReducer = (state = { ...INITIAL_STATE }, action) => {
@@ -13,19 +13,19 @@ export const usernameReducer = (state = { ...INITIAL_STATE }, action) => {
         ...INITIAL_STATE,
         loading: true,
       };
-
     case USERNAME_SUCCESS:
       return {
         ...INITIAL_STATE,
-        username: action.payload,
         loading: false,
+        users: action.payload,
+        error: "",
       };
-
     case USERNAME_FAILURE:
       return {
         ...INITIAL_STATE,
-        error: action.payload,
         loading: false,
+        user: null,
+        error: action.payload,
       };
 
     default:
