@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
-import "./LoginForm.css";
+import "./SignUp.css";
 import { Button } from "rsuite";
 
-export const LoginForm = ({ login }) => {
+export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,
     error: state.auth.error,
@@ -16,12 +16,19 @@ export const LoginForm = ({ login }) => {
 
   const [state, setState] = useState({
     username: "",
+    displayName: "",
     password: "",
   });
 
-  const handleLogin = (event) => {
+  const handleSignUp = (event) => {
     event.preventDefault();
-    dispatch(actions.login(state));
+    dispatch(actions.signUp(state));
+    // clear out inputs on submit
+    setState({
+      username: "",
+      displayName: "",
+      password: "",
+    });
   };
 
   const handleChange = (event) => {
@@ -32,7 +39,7 @@ export const LoginForm = ({ login }) => {
 
   return (
     <React.Fragment>
-      <form id="login-form" onSubmit={handleLogin}>
+      <form id="sign-up" onSubmit={handleSignUp}>
         <label htmlFor="username">Email (will be your username)</label>
         <input
           type="text"
@@ -43,20 +50,29 @@ export const LoginForm = ({ login }) => {
           required
           onChange={handleChange}
         />
+        <label htmlFor="displayName">Display Name</label>
+        <input
+          type="text"
+          name="displayName"
+          placeholder="John Lennon"
+          value={state.displayName}
+          autoFocus
+          required
+          onChange={handleChange}
+        />
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="p@55w0rd"
           name="password"
+          placeholder="p@55w0rd"
           value={state.password}
           required
           onChange={handleChange}
         />
-        <Button active appearance="primary" type="submit" disabled={loading}>
-          Login
+        <Button appearance="primary" type="submit" disabled={loading}>
+          Sign Up
         </Button>
       </form>
-
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
     </React.Fragment>

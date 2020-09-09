@@ -4,6 +4,9 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Navigation } from "./components";
 import configureStore from "./redux/configureStore";
 
+// import default style
+import "rsuite/dist/styles/rsuite-default.css";
+
 const { store, persistor } = configureStore();
 
 const KWITTER = {

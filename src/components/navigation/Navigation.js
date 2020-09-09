@@ -1,23 +1,38 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
-import { HomeScreen, ProfileScreen, NotFoundScreen } from "../../screens";
+import {
+  HomeScreen,
+  ProfileScreen,
+  SignUpScreen,
+  NotFoundScreen,
+  MessagesScreen,
+  UsersScreen,
+} from "../../screens/";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
-
 export const Navigation = () => (
   <BrowserRouter>
     <Switch>
+      {/* home page */}
       <ConnectedRoute
         exact
         path="/"
         redirectIfAuthenticated
         component={HomeScreen}
       />
+      {/* profile page */}
       <ConnectedRoute
         exact
         isProtected
         path="/profiles/:username"
         component={ProfileScreen}
       />
+      {/* signup page */}
+      <ConnectedRoute exact path="/signup" component={SignUpScreen} />
+      {/* message feed page */}
+      <ConnectedRoute exact path="/messagefeed" component={MessagesScreen} />
+      {/* users list page */}
+      <ConnectedRoute exact path="/users" component={UsersScreen} />
+      {/* 404 page */}
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>

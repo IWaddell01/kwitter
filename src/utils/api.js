@@ -35,6 +35,7 @@ class API {
     this.axiosInstance = axiosInstance;
   }
 
+  // Login
   async login({ username, password }) {
     try {
       const result = await this.axiosInstance.post("/auth/login", {
@@ -48,9 +49,47 @@ class API {
     }
   }
 
+  // Logout
   async logout() {
     try {
       await this.axiosInstance.get("/auth/logout");
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Sign Up
+  async signUp({ username, displayName, password }) {
+    try {
+      const result = await this.axiosInstance.post("/users", {
+        username,
+        displayName,
+        password,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Users List
+  async users() {
+    try {
+      const result = await this.axiosInstance.get("/users");
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Messages
+  async messages() {
+    try {
+      const result = await this.axiosInstance.get("/messages");
+      return result;
     } catch (err) {
       helpMeInstructor(err);
       throw err;
