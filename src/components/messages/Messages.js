@@ -9,12 +9,12 @@ export const Messages = () => {
   //   const dispatch = useDispatch();
 
   //   dispatch(actions.users());
-
+  console.log(state)
   // console.log()
 
   return (
     <React.Fragment>
-      {state.messages}
+      {/* {state.messages} */}
 
       {/* {loading && <Loader />} */}
       {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}

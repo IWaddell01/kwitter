@@ -77,7 +77,7 @@ class API {
   // Users List
   async users() {
     try {
-      const result = await this.axiosInstance.get("/users");
+      const result = await this.axiosInstance.get("/users?limit=200");
       return result;
     } catch (err) {
       helpMeInstructor(err);
