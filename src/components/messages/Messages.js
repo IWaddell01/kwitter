@@ -4,20 +4,20 @@ import { actions } from "../../redux/actions/messages";
 import "./Messages";
 
 export const Messages = () => {
-const state = useSelector((state) => state.messages);
+  const state = useSelector((state) => state.messages);
 
-//   const dispatch = useDispatch();
+  //   const dispatch = useDispatch();
 
-//   dispatch(actions.users());
-  
-    // console.log()
+  //   dispatch(actions.users());
+
+  // console.log()
 
   return (
     <React.Fragment>
-    {state.messages}
+      {state.messages}
 
-    {/* {loading && <Loader />} */}
-    {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}
+      {/* {loading && <Loader />} */}
+      {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}
     </React.Fragment>
   );
 };

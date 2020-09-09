@@ -1,4 +1,8 @@
-import { MESSAGES, MESSAGE_FEED_SUCCESS,MESSAGE_FEED_FAILURE } from "../actions";
+import {
+  MESSAGES,
+  MESSAGE_FEED_SUCCESS,
+  MESSAGE_FEED_FAILURE,
+} from "../actions";
 
 const INITIAL_STATE = {
   messages: [],
