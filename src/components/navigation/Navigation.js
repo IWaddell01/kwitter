@@ -30,9 +30,9 @@ export const Navigation = () => (
       <ConnectedRoute exact path="/signup" component={SignUpScreen} />
       {/* message feed page */}
       <ConnectedRoute exact path="/messagefeed" component={MessagesScreen} />
-
+      {/* users list page */}
       <ConnectedRoute exact path="/users" component={UsersScreen} />
-
+      {/* 404 page */}
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
