@@ -1,10 +1,12 @@
+body {
+  background-color: #0f131a;
+  color: #e9ebf0;
+}
 #root {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
-  background-color: #0f131a;
-  color: #e9ebf0;
   padding-bottom: 1em;
 }
 
@@ -34,5 +36,5 @@ textarea {
   line-height: inherit;
   border-radius: 0.5em;
   padding: 0.5em;
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
