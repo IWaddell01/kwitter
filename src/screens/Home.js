@@ -31,7 +31,7 @@ export const HomeScreen = () => (
 
       <TabPanel>
         <em>
-          <strong>Please enter details to login to acccount.</strong>
+          <strong>Please enter details to login an acccount.</strong>
         </em>
         <br /> <br />
         <LoginFormContainer />

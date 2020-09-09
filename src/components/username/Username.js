@@ -17,6 +17,7 @@ export const Username = () => {
 
   // const userList = Array.from(state.users.users);
   console.log(user);
+  // TODO: Show user info in console.log
   return (
     <React.Fragment>
       <PanelGroup>
