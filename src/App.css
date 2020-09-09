@@ -24,3 +24,15 @@ a:hover {
 svg {
   margin: 0 0.5em;
 }
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin: .5em 0;
+}
