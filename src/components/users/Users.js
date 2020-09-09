@@ -10,12 +10,12 @@ export const Users = () => {
 //   const dispatch = useDispatch();
 
 //   dispatch(actions.users());
-
-  console.log(state.users);
+  
+    // console.log()
 
   return (
     <React.Fragment>
-
+    {state.users.count}
 
     {/* {loading && <Loader />} */}
     {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}
