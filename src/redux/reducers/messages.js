@@ -23,7 +23,7 @@ export const messagesReducer = (state = { ...INITIAL_STATE }, action) => {
     case MESSAGE_FEED_SUCCESS:
       return {
         ...INITIAL_STATE,
-        meesages: action.payload,
+        messages: action.payload,
         count: 0,
         statusCode: 0,
         loading: false,
