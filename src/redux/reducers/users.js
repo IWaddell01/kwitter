@@ -1,43 +1,36 @@
-import {
-  MESSAGE_FEED,
-  MESSAGE_FEED_SUCCESS,
-  MESSAGE_FEED_FAILURE,
-} from "../actions";
+import { USERS, USERS_SUCCESS, USERS_FAILURE } from "../actions";
 
-// INITIAL STATE
 const INITIAL_STATE = {
-  id: 0,
-  text: "",
-  username: "",
-  createdAt: "",
-  likes: [],
   loading: false,
+  users: [],
+  count: 0,
+  error: "",
 };
 
-export const messagedFeedReducer = (state = { ...INITIAL_STATE }, action) => {
+export const usersReducer = (state = { ...INITIAL_STATE }, action) => {
   switch (action.type) {
-    case MESSAGE_FEED:
+    case USERS:
       return {
         ...INITIAL_STATE,
         loading: true,
       };
-    case MESSAGE_FEED_SUCCESS:
-      const { id, text, username, createdAt, likes } = action.payload;
+    case USERS_SUCCESS:
       return {
         ...INITIAL_STATE,
-        id,
-        text,
-        username,
-        createdAt,
-        likes,
         loading: false,
+        count: 0,
+        users: action.payload,
+        error: "",
       };
-    case MESSAGE_FEED_FAILURE:
+
+    case USERS_FAILURE:
       return {
         ...INITIAL_STATE,
+        loading: false,
+        users: [],
         error: action.payload,
-        loading: false,
       };
+
     default:
       return state;
   }

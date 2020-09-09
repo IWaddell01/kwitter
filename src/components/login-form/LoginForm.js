@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
+
 import "./LoginForm.css";
+import { Button } from "rsuite";
 
 export const LoginForm = ({ login }) => {
   const { loading, error } = useSelector((state) => ({
@@ -35,7 +37,7 @@ export const LoginForm = ({ login }) => {
         <input
           type="text"
           name="username"
-          placeholder="me@everythingisawesome.com"
+          placeholder="user@email.com"
           value={state.username}
           autoFocus
           required
@@ -44,16 +46,17 @@ export const LoginForm = ({ login }) => {
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="b3@tl35Lyr4Cs"
+          placeholder="p@55w0rd"
           name="password"
           value={state.password}
           required
           onChange={handleChange}
         />
-        <button type="submit" disabled={loading}>
+        <Button active appearance="primary" type="submit" disabled={loading}>
           Login
-        </button>
+        </Button>
       </form>
+
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
     </React.Fragment>

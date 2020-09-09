@@ -1,5 +1,6 @@
 export * from "./Home";
 export * from "./Profile";
-export * from "./MessageFeed";
+export * from "./Messages";
 export * from "./SignUp";
 export * from "./NotFound";
+export * from "./Users";

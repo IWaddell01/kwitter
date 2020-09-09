@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
-import "./SignUp.css";
 
-import "rsuite/dist/styles/rsuite-default.css";
+import "./SignUp.css";
+import { Button } from "rsuite";
 
 export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
@@ -44,7 +44,7 @@ export const SignUp = ({ signUp }) => {
         <input
           type="text"
           name="username"
-          placeholder="me@everythingisawesome.com"
+          placeholder="user@email.com"
           value={state.username}
           autoFocus
           required
@@ -64,14 +64,14 @@ export const SignUp = ({ signUp }) => {
         <input
           type="password"
           name="password"
-          placeholder="b3@tl35Lyr4Cs"
+          placeholder="p@55w0rd"
           value={state.password}
           required
           onChange={handleChange}
         />
-        <button type="submit" disabled={loading}>
+        <Button appearance="primary" type="submit" disabled={loading}>
           Sign Up
-        </button>
+        </Button>
       </form>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}

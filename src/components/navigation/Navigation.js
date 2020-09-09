@@ -3,12 +3,12 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import {
   HomeScreen,
   ProfileScreen,
-  MessageFeedScreen,
   SignUpScreen,
   NotFoundScreen,
-} from "../../screens";
+  MessagesScreen,
+  UsersScreen,
+} from "../../screens/";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
-
 export const Navigation = () => (
   <BrowserRouter>
     <Switch>
@@ -29,12 +29,10 @@ export const Navigation = () => (
       {/* signup page */}
       <ConnectedRoute exact path="/signup" component={SignUpScreen} />
       {/* message feed page */}
-      <ConnectedRoute
-        exact
-        path="/messagefeed"
-        component={MessageFeedScreen}
-      />
-
+      <ConnectedRoute exact path="/messagefeed" component={MessagesScreen} />
+      {/* users list page */}
+      <ConnectedRoute exact path="/users" component={UsersScreen} />
+      {/* 404 page */}
       <ConnectedRoute path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
