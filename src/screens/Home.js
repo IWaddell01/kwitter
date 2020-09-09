@@ -6,12 +6,12 @@ import {
 } from "../components";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Footer } from "rsuite";
 
 import "react-tabs/style/react-tabs.css";
 
 import { AiOutlineLogin } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
+import { Footer } from "rsuite";
 
 export const HomeScreen = () => (
   <>
@@ -44,6 +44,6 @@ export const HomeScreen = () => (
         <SignUpFormContainer />
       </TabPanel>
     </Tabs>
-    <Footer>Footer</Footer>
+    <Footer>Kwitter - Team S - SE Q2</Footer>
   </>
 );
