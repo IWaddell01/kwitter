@@ -2,13 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/users";
 import "./Users.css";
-import { Loader } from "./../loader/Loader";
 
 export const Users = () => {
   const state = useSelector((state) => state.users);
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-//   dispatch(actions.users());
+  dispatch(actions.users());
   
     // console.log()
 

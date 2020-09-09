@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/messages";
 import "./Messages";
-import { Loader } from "../loader/Loader";
 
 export const Messages = () => {
 const state = useSelector((state) => state.messages);
