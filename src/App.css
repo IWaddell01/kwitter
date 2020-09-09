@@ -17,3 +17,7 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+svg {
+  margin: 0 0.5em;
+}
