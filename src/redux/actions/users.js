@@ -16,7 +16,3 @@ export const users = () => async (dispatch, getState) => {
     });
   }
 };
-
-export const actions = {
-  users,
-};

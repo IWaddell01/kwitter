@@ -78,6 +78,20 @@ class API {
   async users() {
     try {
       const result = await this.axiosInstance.get("/users");
+      console.log(result);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Username
+  async username(username) {
+    try {
+      const result = await this.axiosInstance.get("/users/{username}", {
+        username,
+      });
       return result;
     } catch (err) {
       helpMeInstructor(err);
