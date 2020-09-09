@@ -7,9 +7,8 @@ import {
   SignUpScreen,
   NotFoundScreen,
   UsersScreen
-} from "../../screens";
+} from "../../screens/";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
-
 export const Navigation = () => (
   <BrowserRouter>
     <Switch>
