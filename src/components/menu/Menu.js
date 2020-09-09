@@ -5,6 +5,10 @@ import { actions } from "../../redux/actions/";
 
 import "./Menu.css";
 
+import { AiFillMessage } from "react-icons/ai";
+import { AiOutlineUsergroupDelete } from "react-icons/ai";
+import { AiOutlineLogout } from "react-icons/ai";
+
 import { Navbar } from "rsuite";
 
 export const Menu = () => {
@@ -23,10 +27,14 @@ export const Menu = () => {
           {isAuthenticated ? (
             <>
               <Navbar.Body>
-                <Link to="/messagefeed">Message Feed</Link>
-                <Link to="/users">Users</Link>
+                <Link to="/messagefeed">
+                  <AiFillMessage /> Message Feed
+                </Link>
+                <Link to="/users">
+                  <AiOutlineUsergroupDelete /> Users
+                </Link>
                 <Link to="/" onClick={logout}>
-                  Logout
+                  <AiOutlineLogout /> Logout
                 </Link>
               </Navbar.Body>
             </>
