@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
+
 import "./SignUp.css";
+import { Button } from "rsuite";
 
 export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
@@ -67,9 +69,9 @@ export const SignUp = ({ signUp }) => {
           required
           onChange={handleChange}
         />
-        <button type="submit" disabled={loading}>
+        <Button appearance="primary" type="submit" disabled={loading}>
           Sign Up
-        </button>
+        </Button>
       </form>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
