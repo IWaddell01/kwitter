@@ -5,15 +5,13 @@ import "rsuite/dist/styles/rsuite-default.css";
 import { v4 as uuid } from "uuid";
 
 
-
 export const Users = () => {
-  const state = useSelector((state) => state.users);
-  
-  const userList = Array.from(state.users.users);
-  // console.log(userList)
+  const state = useSelector((state) => state.users.users);
+
+
   return (
     <React.Fragment>
-      {userList.map((data) => (
+      {state.users.map((data) => (
         <div key={uuid()} className="usersList">
           Username: {data.username}
           <br />
