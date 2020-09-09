@@ -3,6 +3,9 @@
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
+  background-color: #0f131a;
+  color: #e9ebf0;
+  padding-bottom: 1em;
 }
 
 a {
