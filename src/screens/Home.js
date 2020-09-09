@@ -8,6 +8,9 @@ import {
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
+import { AiOutlineLogin } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
+
 export const HomeScreen = () => (
   <>
     <MenuContainer />
@@ -15,8 +18,15 @@ export const HomeScreen = () => (
 
     <Tabs defaultFocus={true} defaultIndex={1}>
       <TabList>
-        <Tab>Login</Tab>
-        <Tab>Sign Up</Tab>
+        <Tab>
+          {" "}
+          <AiOutlineLogin />
+          Login
+        </Tab>
+        <Tab>
+          <AiFillEdit />
+          Sign Up
+        </Tab>
       </TabList>
 
       <TabPanel>
