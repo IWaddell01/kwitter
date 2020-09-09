@@ -35,7 +35,7 @@ export const LoginForm = ({ login }) => {
         <input
           type="text"
           name="username"
-          placeholder="me@everythingisawesome.com"
+          placeholder="user@email.com"
           value={state.username}
           autoFocus
           required
@@ -44,7 +44,7 @@ export const LoginForm = ({ login }) => {
         <label htmlFor="password">Password</label>
         <input
           type="password"
-          placeholder="b3@tl35Lyr4Cs"
+          placeholder="p@55w0rd"
           name="password"
           value={state.password}
           required
