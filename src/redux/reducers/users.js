@@ -3,7 +3,6 @@ import { USERS, USERS_SUCCESS, USERS_FAILURE } from "../actions";
 const INITIAL_STATE = {
   loading: false,
   users: null,
-  count: 0,
   error: "",
 };
 
@@ -18,7 +17,6 @@ export const usersReducer = (state = { ...INITIAL_STATE }, action) => {
       return {
         ...INITIAL_STATE,
         loading: false,
-        count: 0,
         users: action.payload,
         error: "",
       };

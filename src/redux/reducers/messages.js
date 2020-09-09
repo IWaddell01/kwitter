@@ -1,15 +1,9 @@
-import {
-  MESSAGES,
-  MESSAGE_FEED_SUCCESS,
-  MESSAGE_FEED_FAILURE,
-} from "../actions";
+import { MESSAGES, MESSAGES_SUCCESS, MESSAGES_FAILURE } from "../actions";
 
 const INITIAL_STATE = {
-  messages: [],
-  count: 0,
-  statusCode: 0,
   loading: false,
-  errors: "",
+  message: null,
+  error: "",
 };
 
 export const messagesReducer = (state = { ...INITIAL_STATE }, action) => {
@@ -19,21 +13,19 @@ export const messagesReducer = (state = { ...INITIAL_STATE }, action) => {
         ...INITIAL_STATE,
         loading: true,
       };
-
-    case MESSAGE_FEED_SUCCESS:
+    case MESSAGES_SUCCESS:
       return {
         ...INITIAL_STATE,
-        messages: action.payload,
-        count: 0,
-        statusCode: 0,
         loading: false,
+        message: action.payload,
+        error: "",
       };
-
-    case MESSAGE_FEED_FAILURE:
+    case MESSAGES_FAILURE:
       return {
         ...INITIAL_STATE,
-        error: action.payload,
         loading: false,
+        message: null,
+        error: action.payload,
       };
 
     default:
