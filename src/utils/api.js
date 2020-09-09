@@ -85,6 +85,19 @@ class API {
     }
   }
 
+  // Username
+  async username(username) {
+    try {
+      const result = await this.axiosInstance.get("/users/{username}", {
+        username,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   // Messages
   async messages() {
     try {
