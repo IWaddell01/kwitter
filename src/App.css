@@ -38,3 +38,8 @@ textarea {
   padding: 0.5em;
   margin: 0.5em 0;
 }
+
+.rs-panel-heading {
+  background: #e3e3e3;
+  text-align: center;
+}
