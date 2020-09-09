@@ -16,7 +16,7 @@ export const Menu = () => {
       <div id="menu">
         <Navbar.Header>
           <Link to="/">
-            <h2>KWITTER</h2>
+            <h1>KWITTER</h1>
           </Link>
         </Navbar.Header>
         <div id="menu-links">

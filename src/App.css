@@ -4,3 +4,16 @@
   justify-content: space-around;
   align-items: center;
 }
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}

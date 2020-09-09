@@ -1,22 +1,12 @@
 #menu {
   display: flex;
-  flex-flow: column nowrap;
+  /* flex-flow: column nowrap; */
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  margin-bottom: 0.5em;
 }
 
 #menu-links a {
-  color: #fff;
   padding: 0.5em;
-  margin-right: 1em;
   text-decoration: none;
-  cursor: pointer;
-}
-
-#menu-links a:hover {
-  background-color: rgba(255, 255, 255, 0.096);
-  text-decoration: none;
-  cursor: pointer;
 }
