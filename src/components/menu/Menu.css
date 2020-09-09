@@ -1,20 +1,22 @@
 #menu {
-  background-color: lightskyblue;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
-}
-
-#menu-links {
-  display: flex;
-  padding-left: 1em;
+  width: 100vw;
+  margin-bottom: 0.5em;
 }
 
 #menu-links a {
-  padding-right: 0.5em;
-  color: darkblue;
-  text-decoration: underline;
+  color: #fff;
+  padding: 0.5em;
+  margin-right: 1em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#menu-links a:hover {
+  background-color: rgba(255, 255, 255, 0.096);
+  text-decoration: none;
   cursor: pointer;
 }
