@@ -3,9 +3,9 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import {
   HomeScreen,
   ProfileScreen,
-  MessageFeedScreen,
   SignUpScreen,
   NotFoundScreen,
+  MessagesScreen,
   UsersScreen
 } from "../../screens";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
@@ -33,7 +33,7 @@ export const Navigation = () => (
       <ConnectedRoute
         exact
         path="/messagefeed"
-        component={MessageFeedScreen}
+        component={MessagesScreen}
       />
 
       <ConnectedRoute 

@@ -4,8 +4,6 @@ import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 import "./SignUp.css";
 
-import "rsuite/dist/styles/rsuite-default.css";
-
 export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
     loading: state.auth.loading,

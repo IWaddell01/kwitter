@@ -74,8 +74,19 @@ class API {
     }
   }
 
-  // MESSAGES FEED
-  async messageFeed() {
+  // USERS LIST
+  async users() {
+    try {
+      const result = await this.axiosInstance.get("/users");
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // MESSAGE FEED
+  async messages() {
     try {
       const result = await this.axiosInstance.get("/messages");
       return result;
@@ -84,17 +95,7 @@ class API {
       throw err;
     }
   }
-
-  async users() {
-    try {
-      const result = await this.axiosInstance.get("/users");
-      // console.log(result)
-      return result;
-    } catch (err) {
-      helpMeInstructor(err);
-      throw err;
-    }
-  }
+  
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]

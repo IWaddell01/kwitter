@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actions } from "../../redux/actions/users";
-import "./Users.css";
-import { Loader } from "./../loader/Loader";
+import { actions } from "../../redux/actions/messages";
+import "./Messages";
+import { Loader } from "../loader/Loader";
 
-export const Users = () => {
-  const state = useSelector((state) => state.users);
+export const Messages = () => {
+const state = useSelector((state) => state.messages);
+
 //   const dispatch = useDispatch();
 
 //   dispatch(actions.users());
@@ -14,7 +15,7 @@ export const Users = () => {
 
   return (
     <React.Fragment>
-    {state.users.count}
+    {state.messages}
 
     {/* {loading && <Loader />} */}
     {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}
