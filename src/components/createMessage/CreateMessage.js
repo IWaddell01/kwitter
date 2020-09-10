@@ -21,6 +21,10 @@ export const CreateMessage = ({ text }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createMessage(state));
+    // clear out inputs on submit
+    setState({
+      text: "",
+    });
   };
 
   const handleChange = (event) => {
