@@ -7,27 +7,28 @@ import "rsuite/dist/styles/rsuite-default.css";
 import { Panel, PanelGroup } from "rsuite";
 
 export const Username = () => {
-  const userInfo = useSelector((state) => state.username);
+  const userData = useSelector((state) => state.userInfo.user);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(username(userInfo));
-  }, [dispatch, userInfo]);
+    dispatch(username());
+  }, [dispatch]);
 
-  // const userList = Array.from(state.users.users);
-  console.log(userInfo);
-  // TODO: Show userInfo info in console.log -keeps showing undefined.
   return (
     <React.Fragment>
-      <PanelGroup>
-        <Panel header={"userInfo"}>
-          User Image: {"user image"} <br />
-          Display Name: {"display name"} <br />
-          Member Since: {"created date"} <br />
-          About Member: {"about member"}
-        </Panel>
-      </PanelGroup>
+      {/* Wrap in conditional render to end null errors */}
+      {userData && (
+        <PanelGroup>
+          <Panel header={"Name: " + userData.user.displayName}>
+            User Image: <strong>{userData.user.pictureLocation}</strong> <br />
+            Email: <strong>{userData.user.username}</strong> <br />
+            About Member: <strong>{userData.user.about}</strong>
+            Member Since: <strong>{userData.user.createdAt}</strong> <br />
+            <hr />
+          </Panel>
+        </PanelGroup>
+      )}
     </React.Fragment>
   );
 };
