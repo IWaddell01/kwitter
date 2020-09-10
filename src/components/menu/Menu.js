@@ -27,6 +27,9 @@ export const Menu = () => {
           {isAuthenticated ? (
             <>
               <Navbar.Body>
+                <Link to="/createmessage">
+                  <AiFillMessage /> Create Message
+                </Link>
                 <Link to="/messagefeed">
                   <AiFillMessage /> Message Feed
                 </Link>
