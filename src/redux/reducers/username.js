@@ -1,30 +1,30 @@
-import { USERS, USERS_SUCCESS, USERS_FAILURE } from "../actions";
+import { USERNAME, USERNAME_SUCCESS, USERNAME_FAILURE } from "../actions";
 
 const INITIAL_STATE = {
   loading: false,
-  users: null,
+  user: null,
   error: "",
 };
 
-export const usersReducer = (state = { ...INITIAL_STATE }, action) => {
+export const usernameReducer = (state = { ...INITIAL_STATE }, action) => {
   switch (action.type) {
-    case USERS:
+    case USERNAME:
       return {
         ...INITIAL_STATE,
         loading: true,
       };
-    case USERS_SUCCESS:
+    case USERNAME_SUCCESS:
       return {
         ...INITIAL_STATE,
         loading: false,
         users: action.payload,
         error: "",
       };
-    case USERS_FAILURE:
+    case USERNAME_FAILURE:
       return {
         ...INITIAL_STATE,
         loading: false,
-        users: null,
+        user: null,
         error: action.payload,
       };
 

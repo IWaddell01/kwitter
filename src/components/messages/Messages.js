@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { actions } from "../../redux/actions/messages";
-import "./Messages";
+import { messages } from "../../redux/actions/messages";
+import { v4 as uuid } from "uuid";
+
+import "./Messages.css";
+import "rsuite/dist/styles/rsuite-default.css";
+import { Panel, PanelGroup } from "rsuite";
 
 export const Messages = () => {
-  const state = useSelector((state) => state.messages);
+  const messageFeed = useSelector((state) => state.messages.message);
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  //   dispatch(actions.users());
-  console.log(state)
-  // console.log()
+  useEffect(() => {
+    dispatch(messages());
+  }, [dispatch]);
 
   return (
     <React.Fragment>
-      {/* {state.messages} */}
-
-      {/* {loading && <Loader />} */}
-      {/* {error && <p style={{ color: "red" }}>{error.message}</p>} */}
+      {messageFeed &&
+        messageFeed.messages.map((data) => (
+          <PanelGroup>
+            <div key={uuid()}>
+              <Panel header={'" ' + data.text + ' "'}>
+                User Name: {data.username} <br />
+                Date: {data.createdAt} <br />
+              </Panel>
+            </div>
+          </PanelGroup>
+        ))}
     </React.Fragment>
   );
 };

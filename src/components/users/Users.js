@@ -1,25 +1,34 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "./Users.css";
-import "rsuite/dist/styles/rsuite-default.css";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { users } from "../../redux/actions/users";
 import { v4 as uuid } from "uuid";
 
+import "./Users.css";
+import "rsuite/dist/styles/rsuite-default.css";
+import { Panel, PanelGroup } from "rsuite";
 
 export const Users = () => {
-  const state = useSelector((state) => state.users.users);
+  const userList = useSelector((state) => state.users.users);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(users());
+  }, [dispatch]);
 
   return (
     <React.Fragment>
-      {state.users.map((data) => (
-        <div key={uuid()} className="usersList">
-          Username: {data.username}
-          <br />
-          Name: {data.displayName}
-          <br />
-          User since: {data.createdAt}
-        </div>
-      ))}
+      {userList &&
+        userList.users.map((data) => (
+          <PanelGroup>
+            <div key={uuid()} className="usersList">
+              <Panel header={"Username: " + data.username}>
+                Display Name: {data.displayName} <br />
+                Member Since: {data.createdAt} <br />
+              </Panel>
+            </div>
+          </PanelGroup>
+        ))}
     </React.Fragment>
   );
 };

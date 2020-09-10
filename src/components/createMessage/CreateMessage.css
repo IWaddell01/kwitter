@@ -1,0 +1,9 @@
+#createMessage-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 20em;
+}
+
+#createMessage-form input {
+  height: 5em;
+}

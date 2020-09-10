@@ -17,7 +17,7 @@ export const HomeScreen = () => (
   <>
     <MenuContainer />
     <h4>Your favorite microblogging platform</h4>
-    <Tabs defaultFocus={true} defaultIndex={1}>
+    <Tabs defaultFocus={true} defaultIndex={0}>
       <TabList>
         <Tab>
           <AiOutlineLogin />
@@ -31,7 +31,7 @@ export const HomeScreen = () => (
 
       <TabPanel>
         <em>
-          <strong>Please enter details to login to acccount.</strong>
+          <strong>Please enter details to login an acccount.</strong>
         </em>
         <br /> <br />
         <LoginFormContainer />

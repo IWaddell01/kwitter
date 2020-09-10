@@ -86,10 +86,36 @@ class API {
     }
   }
 
+  // Username
+  async username(username) {
+    try {
+      const result = await this.axiosInstance.get("/users/newuser", {
+        username,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   // Messages
   async messages() {
     try {
       const result = await this.axiosInstance.get("/messages");
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Create Message
+  async createMessage({ text }) {
+    try {
+      const result = await this.axiosInstance.post("/messages", {
+        text,
+      });
       return result;
     } catch (err) {
       helpMeInstructor(err);

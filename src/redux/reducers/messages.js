@@ -1,17 +1,20 @@
 import {
   MESSAGES,
-  MESSAGE_FEED_SUCCESS,
-  MESSAGE_FEED_FAILURE,
+  MESSAGES_SUCCESS,
+  MESSAGES_FAILURE,
+  CREATE_MESSAGE,
+  CREATE_MESSAGE_SUCCESS,
+  CREATE_MESSAGE_FAILURE,
 } from "../actions";
 
 const INITIAL_STATE = {
-  messages: [],
-  count: 0,
-  statusCode: 0,
   loading: false,
-  errors: "",
+  message: null,
+  text: "null",
+  error: "",
 };
 
+// Message Feed
 export const messagesReducer = (state = { ...INITIAL_STATE }, action) => {
   switch (action.type) {
     case MESSAGES:
@@ -19,23 +22,47 @@ export const messagesReducer = (state = { ...INITIAL_STATE }, action) => {
         ...INITIAL_STATE,
         loading: true,
       };
-
-    case MESSAGE_FEED_SUCCESS:
+    case MESSAGES_SUCCESS:
       return {
         ...INITIAL_STATE,
-        meesages: action.payload,
-        count: 0,
-        statusCode: 0,
         loading: false,
+        message: action.payload,
+        error: "",
+      };
+    case MESSAGES_FAILURE:
+      return {
+        ...INITIAL_STATE,
+        loading: false,
+        message: null,
+        error: action.payload,
       };
 
-    case MESSAGE_FEED_FAILURE:
+    default:
+      return state;
+  }
+};
+
+// Create Message
+export const createMessage = (state = { ...INITIAL_STATE }, action) => {
+  switch (action.type) {
+    case CREATE_MESSAGE:
+      return {
+        ...INITIAL_STATE,
+        loading: true,
+      };
+    case CREATE_MESSAGE_SUCCESS:
+      const { text } = action.payload;
+      return {
+        ...INITIAL_STATE,
+        text: text,
+        loading: false,
+      };
+    case CREATE_MESSAGE_FAILURE:
       return {
         ...INITIAL_STATE,
         error: action.payload,
         loading: false,
       };
-
     default:
       return state;
   }

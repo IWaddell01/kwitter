@@ -1,11 +1,12 @@
 import api from "../../utils/api";
 
-// AUTH CONSTANTS
+// AUTH CONSTANTS LOGIN / LOGOUT
 export const LOGIN = "AUTH/LOGIN";
 export const LOGIN_SUCCESS = "AUTH/LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "AUTH/LOGIN_FAILURE";
 export const LOGOUT = "AUTH/LOGOUT";
 
+// AUTH CONSTANTS SIGNUP
 export const SIGN_UP = "AUTH/SIGN_UP";
 export const SIGN_UP_SUCCESS = "AUTH/SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "AUTH/SIGN_UP_FAILURE";
@@ -15,7 +16,7 @@ export const SIGN_UP_FAILURE = "AUTH/SIGN_UP_FAILURE";
  THUNKS: --> https://github.com/reduxjs/redux-thunk#whats-a-thunk
  If you need access to your store you may call getState()
 */
-
+// Login
 const login = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: LOGIN });
@@ -31,6 +32,7 @@ const login = (credentials) => async (dispatch, getState) => {
   }
 };
 
+// Logout
 const logout = () => async (dispatch, getState) => {
   try {
     // We do not care about the result of logging out
@@ -44,7 +46,7 @@ const logout = () => async (dispatch, getState) => {
   }
 };
 
-// SIGN UP
+// Sign Up
 const signUp = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: SIGN_UP });
