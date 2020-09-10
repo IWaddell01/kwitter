@@ -41,7 +41,7 @@ export const LoginForm = ({ login }) => {
       if (!event || !event.data || !event.data.token) {
         return;
       }
-      loginGoogle(event.data);
+      // loginGoogle(event.data);
     };
   };
 
