@@ -22,7 +22,7 @@ export const Users = () => {
         userList.users.map((data) => (
           <PanelGroup>
             <div key={uuid()} className="usersList">
-              <Panel header={data.username}>
+              <Panel header={"Username: " + data.username}>
                 Display Name: {data.displayName} <br />
                 Member Since: {data.createdAt} <br />
               </Panel>
