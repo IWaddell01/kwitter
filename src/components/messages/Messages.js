@@ -20,9 +20,9 @@ export const Messages = () => {
     <React.Fragment>
       {messageFeed &&
         messageFeed.messages.map((data) => (
-          <PanelGroup>
-            <div key={uuid()}>
-              <Panel header={'" ' + data.text + ' "'}>
+          <PanelGroup key={uuid()}>
+            <div>
+              <Panel header={'" ' + data.text + ' "'} >
                 User Name: {data.username} <br />
                 Date: {data.createdAt} <br />
               </Panel>
