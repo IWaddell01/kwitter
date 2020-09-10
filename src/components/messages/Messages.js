@@ -21,8 +21,8 @@ export const Messages = () => {
       {messageFeed &&
         messageFeed.messages.map((data) => (
           <PanelGroup>
-            <div key={uuid()} className="usersList">
-              <Panel header={data.text}>
+            <div key={uuid()}>
+              <Panel header={'" ' + data.text + ' "'}>
                 User Name: {data.username} <br />
                 Date: {data.createdAt} <br />
               </Panel>
