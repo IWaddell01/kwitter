@@ -6,3 +6,4 @@ export * from "./SignUp";
 export * from "./NotFound";
 export * from "./Users";
 export * from "./Username";
+export * from "./UpdateProfile";
