@@ -78,7 +78,6 @@ class API {
   async users() {
     try {
       const result = await this.axiosInstance.get("/users");
-      console.log(result);
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -103,6 +102,19 @@ class API {
   async messages() {
     try {
       const result = await this.axiosInstance.get("/messages");
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Create Message
+  async createMessage({ text }) {
+    try {
+      const result = await this.axiosInstance.post("/messages", {
+        text,
+      });
       return result;
     } catch (err) {
       helpMeInstructor(err);
