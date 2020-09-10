@@ -17,7 +17,7 @@ export const usernameReducer = (state = { ...INITIAL_STATE }, action) => {
       return {
         ...INITIAL_STATE,
         loading: false,
-        users: action.payload,
+        user: action.payload,
         error: "",
       };
     case USERNAME_FAILURE:
