@@ -30,6 +30,23 @@ export const LoginForm = ({ login }) => {
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
   };
 
+  const handleGoogleLogin = () => {
+    const authLoginWindow = window.open(
+      "https://kwitter-api.herokuapp.com/auth/google/login",
+      "_blank"
+    );
+
+    authLoginWindow.window.opener.onmessage = (event) => {
+      authLoginWindow.close();
+      {
+        if (!event || !event.data || !event.data.token) {
+          return;
+        }
+        // loginGoogle(event.data);
+      }
+    };
+  };
+
   return (
     <React.Fragment>
       <PanelGroup>
@@ -62,6 +79,14 @@ export const LoginForm = ({ login }) => {
               disabled={loading}
             >
               Login
+            </Button>
+            <Button
+              active
+              appearance="ghost"
+              disabled={loading}
+              onClick={handleGoogleLogin}
+            >
+              Google Login
             </Button>
           </form>
         </Panel>
