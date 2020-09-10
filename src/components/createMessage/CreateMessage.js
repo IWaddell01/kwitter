@@ -4,7 +4,7 @@ import { createMessage } from "../../redux/actions/messages";
 import { Loader } from "../loader";
 
 import "./CreateMessage.css";
-import { Button, Alert } from "rsuite";
+import { Button, Alert, Panel, PanelGroup } from "rsuite";
 
 export const CreateMessage = ({ text }) => {
   const { loading, error } = useSelector((state) => ({
@@ -36,23 +36,32 @@ export const CreateMessage = ({ text }) => {
 
   return (
     <React.Fragment>
-      <form id="createMessage-form" onSubmit={handleSubmit}>
-        <label htmlFor="text">Text</label>
-        <input
-          type="text"
-          placeholder="What' on your mind..?"
-          name="text"
-          value={state.text}
-          required
-          onChange={handleChange}
-        />
-        <Button active appearance="primary" type="submit" disabled={loading}>
-          Submit Post
-        </Button>
-      </form>
+      <PanelGroup>
+        <Panel>
+          <form id="createMessage-form" onSubmit={handleSubmit}>
+            <label htmlFor="text">Text</label>
+            <input
+              type="text"
+              placeholder="What' on your mind..?"
+              name="text"
+              value={state.text}
+              required
+              onChange={handleChange}
+            />
+            <Button
+              active
+              appearance="primary"
+              type="submit"
+              disabled={loading}
+            >
+              Submit Post
+            </Button>
+          </form>
+        </Panel>
 
-      {loading && <Loader />}
-      {error && <p style={{ color: "red" }}>{error.message}</p>}
+        {loading && <Loader />}
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
+      </PanelGroup>
     </React.Fragment>
   );
 };
