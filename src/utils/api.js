@@ -49,6 +49,17 @@ class API {
     }
   }
 
+  // Google Login
+  async loginGoogle() {
+    try {
+      const result = await this.axiosInstance.post("/auth/google/login");
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   // Logout
   async logout() {
     try {

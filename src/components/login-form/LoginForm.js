@@ -35,15 +35,13 @@ export const LoginForm = ({ login }) => {
       "https://kwitter-api.herokuapp.com/auth/google/login",
       "_blank"
     );
-
     authLoginWindow.window.opener.onmessage = (event) => {
       authLoginWindow.close();
-      {
-        if (!event || !event.data || !event.data.token) {
-          return;
-        }
-        // loginGoogle(event.data);
+
+      if (!event || !event.data || !event.data.token) {
+        return;
       }
+      loginGoogle(event.data);
     };
   };
 
@@ -71,7 +69,6 @@ export const LoginForm = ({ login }) => {
               required
               onChange={handleChange}
             />
-
             <Button
               active
               appearance="primary"
