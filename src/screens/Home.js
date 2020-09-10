@@ -17,7 +17,7 @@ export const HomeScreen = () => (
   <>
     <MenuContainer />
     <h4>Your favorite microblogging platform</h4>
-    <Tabs defaultFocus={true} defaultIndex={1}>
+    <Tabs defaultFocus={true} defaultIndex={0}>
       <TabList>
         <Tab>
           <AiOutlineLogin />
