@@ -20,7 +20,7 @@ export const CreateMessage = ({ text }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createMessage.createMessage(state));
+    dispatch(createMessage(state));
   };
 
   const handleChange = (event) => {
@@ -35,7 +35,7 @@ export const CreateMessage = ({ text }) => {
         <label htmlFor="text">Text</label>
         <input
           type="text"
-          placeholder="Everything is awesome."
+          placeholder="What' on your mind..?"
           name="text"
           value={state.text}
           required
