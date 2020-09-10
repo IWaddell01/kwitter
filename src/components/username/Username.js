@@ -13,7 +13,7 @@ export const Username = () => {
 
   useEffect(() => {
     dispatch(username());
-  }, []);
+  }, [dispatch]);
 
   // const userList = Array.from(state.users.users);
   console.log(user);

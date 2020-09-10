@@ -14,7 +14,7 @@ export const Users = () => {
 
   useEffect(() => {
     dispatch(users());
-  }, []);
+  }, [dispatch]);
 
   return (
     <React.Fragment>

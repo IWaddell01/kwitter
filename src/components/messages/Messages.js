@@ -14,7 +14,7 @@ export const Messages = () => {
 
   useEffect(() => {
     dispatch(messages());
-  }, []);
+  }, [dispatch]);
 
   return (
     <React.Fragment>

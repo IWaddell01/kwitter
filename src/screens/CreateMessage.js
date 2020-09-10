@@ -3,7 +3,6 @@ import { CreateMessageContainer, MenuContainer } from "../components";
 
 import "react-tabs/style/react-tabs.css";
 
-import { AiFillEdit } from "react-icons/ai";
 import { Footer } from "rsuite";
 
 export const CreateMessageScreen = () => (
