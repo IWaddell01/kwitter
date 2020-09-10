@@ -8,6 +8,7 @@ import "./Menu.css";
 import { AiFillMessage } from "react-icons/ai";
 import { AiOutlineUsergroupDelete } from "react-icons/ai";
 import { AiOutlineLogout } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
 
 import { Navbar } from "rsuite";
 
@@ -28,7 +29,7 @@ export const Menu = () => {
             <>
               <Navbar.Body>
                 <Link to="/createmessage">
-                  <AiFillMessage /> Create Message
+                  <AiFillEdit /> Create Message
                 </Link>
                 <Link to="/messagefeed">
                   <AiFillMessage /> Message Feed
