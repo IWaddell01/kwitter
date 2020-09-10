@@ -30,7 +30,6 @@ export const createMessage = (text) => async (dispatch, getState) => {
     dispatch({ type: CREATE_MESSAGE });
     const payload = await api.createMessage(text);
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
-    // console.log({ result })
     dispatch({ type: CREATE_MESSAGE_SUCCESS, payload });
   } catch (err) {
     dispatch({
