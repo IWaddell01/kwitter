@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { username } from "../../redux/actions/username";
 import "./Username.css";
@@ -26,7 +27,7 @@ export const Username = () => {
             About Member: <strong>{userData.user.about}</strong> <br />
             Member Since: <strong>{userData.user.createdAt}</strong> <br />
             <hr />
-            <Button appearance="ghost" block>Update Profile</Button>
+            <Link to="/updateprofile"><Button appearance="ghost" block>Update Profile</Button></Link>
           </Panel>
         </PanelGroup>
       )}
