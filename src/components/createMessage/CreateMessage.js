@@ -4,7 +4,7 @@ import { createMessage } from "../../redux/actions/messages";
 import { Loader } from "../loader";
 
 import "./CreateMessage.css";
-import { Button } from "rsuite";
+import { Button, Alert } from "rsuite";
 
 export const CreateMessage = ({ text }) => {
   const { loading, error } = useSelector((state) => ({
@@ -25,6 +25,7 @@ export const CreateMessage = ({ text }) => {
     setState({
       text: "",
     });
+    Alert.success("Post submission successful!");
   };
 
   const handleChange = (event) => {

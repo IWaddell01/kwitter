@@ -4,7 +4,7 @@ import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
 import "./SignUp.css";
-import { Button } from "rsuite";
+import { Button, Alert } from "rsuite";
 
 export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
@@ -29,6 +29,7 @@ export const SignUp = ({ signUp }) => {
       displayName: "",
       password: "",
     });
+    Alert.success("New account created! Please login.");
   };
 
   const handleChange = (event) => {
