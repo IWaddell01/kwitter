@@ -16,8 +16,6 @@ export const Users = () => {
     dispatch(users());
   }, []);
 
-  // const userList = Array.from(state.users.users);
-  console.log(userList);
   return (
     <React.Fragment>
       {userList &&

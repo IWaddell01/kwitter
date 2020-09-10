@@ -16,7 +16,6 @@ export const Messages = () => {
     dispatch(messages());
   }, []);
 
-  console.log(messageFeed);
   return (
     <React.Fragment>
       {messageFeed &&
