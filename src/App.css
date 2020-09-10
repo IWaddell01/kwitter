@@ -40,8 +40,10 @@ textarea {
 }
 
 input {
+  display: block;
   background: #ebebeb1f;
 }
+
 .rs-panel-group {
   display: flex;
   flex-flow: row nowrap;
@@ -61,4 +63,9 @@ input {
   background: #e3e3e3;
   text-align: center;
   font-weight: bold;
+}
+
+.rs-panel-body {
+  display: flex;
+  flex-flow: column nowrap;
 }

@@ -1,9 +1,8 @@
 import React from "react";
 import { CreateMessageContainer, MenuContainer } from "../components";
+import { FooterScreen as Footer } from "./Footer";
 
 import "react-tabs/style/react-tabs.css";
-
-import { Footer } from "rsuite";
 
 export const CreateMessageScreen = () => (
   <>
@@ -15,6 +14,6 @@ export const CreateMessageScreen = () => (
     </strong>
     <br /> <br />
     <CreateMessageContainer />
-    <Footer>Kwitter - Team S - SE Q2</Footer>
+    <Footer />
   </>
 );

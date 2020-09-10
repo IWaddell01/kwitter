@@ -39,7 +39,7 @@ export const CreateMessage = ({ text }) => {
       <PanelGroup>
         <Panel>
           <form id="createMessage-form" onSubmit={handleSubmit}>
-            <label htmlFor="text">Text</label>
+            <label htmlFor="text">I think therefore I am...</label>
             <input
               type="text"
               placeholder="What' on your mind..?"
