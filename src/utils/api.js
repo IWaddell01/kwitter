@@ -88,7 +88,8 @@ class API {
   // Users List
   async users() {
     try {
-      const result = await this.axiosInstance.get("/users");
+      const result = await this.axiosInstance.get("/users?limit=5");
+      console.log("test")
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -123,6 +124,19 @@ class API {
     try {
       const result = await this.axiosInstance.post("/messages", {
         text,
+      });
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+    async likes (messageId) {
+    console.log(messageId);
+    try {
+      const result = await this.axiosInstance.post("/likes", {
+        messageId,
       });
       return result;
     } catch (err) {
