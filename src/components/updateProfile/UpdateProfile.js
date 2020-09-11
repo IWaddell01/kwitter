@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import api from "../../utils/api"
-import { username } from "../../redux/actions/username"
+import api from "../../utils/api";
+import { username } from "../../redux/actions/username";
 import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
 import "./UpdateProfile.css";
@@ -17,7 +17,6 @@ export const UpdateProfile = () => {
 
   const dispatch = useDispatch();
   const picture = useRef(null);
-
 
   const [state, setState] = useState({
     displayName: "",
@@ -43,11 +42,12 @@ export const UpdateProfile = () => {
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
   };
 
-  const setPic = async event => {
+  const setPic = async (event) => {
     event.preventDefault();
     const pictureUrl = new FormData(picture.current);
     const results = await api.setProfilePic(user, pictureUrl);
     dispatch(username(user));
+    Alert.success("Profile photo updated!");
   };
 
   return (
@@ -80,14 +80,16 @@ export const UpdateProfile = () => {
               onChange={handleChange}
             />
             <Button appearance="primary" type="submit">
-              Submit
+              Update Profile
             </Button>
           </form>
           <hr />
           <h4>Set Profile Picture</h4>
           <form ref={picture} onSubmit={setPic}>
             <input className="upload" type="file" name="picture"></input>
-            <Button appearance="primary" type="submit" block>Upload My Picture</Button>
+            <Button appearance="primary" type="submit" block>
+              Upload My Picture
+            </Button>
           </form>
         </Panel>
 
