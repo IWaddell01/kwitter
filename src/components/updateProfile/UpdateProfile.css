@@ -1,13 +1,8 @@
-#update-profile {
+#updateProfile-form {
   display: flex;
   flex-flow: column nowrap;
 }
 
-h4 {
-  text-align: center;
-}
-
-.upload {
-  width: 100%;
-  text-align: center;
+#updateProfile-form .aboutInput {
+  height: 15vh;
 }

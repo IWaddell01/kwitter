@@ -4,7 +4,8 @@ import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
 import "./LoginForm.css";
-import { Button, PanelGroup, Panel } from "rsuite";
+import { Button, Panel } from "rsuite";
+import { AiFillGoogleCircle, AiOutlineLogin } from "react-icons/ai";
 
 export const LoginForm = ({ login }) => {
   const { loading, error } = useSelector((state) => ({
@@ -46,50 +47,44 @@ export const LoginForm = ({ login }) => {
   };
 
   return (
-    <React.Fragment>
-      <PanelGroup>
-        <Panel>
-          <form id="login-form" onSubmit={handleLogin}>
-            <label htmlFor="username">Email (will be your username)</label>
-            <input
-              type="text"
-              name="username"
-              placeholder="user@email.com"
-              value={state.username}
-              autoFocus
-              required
-              onChange={handleChange}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              placeholder="p@55w0rd"
-              name="password"
-              value={state.password}
-              required
-              onChange={handleChange}
-            />
-            <Button
-              active
-              appearance="primary"
-              type="submit"
-              disabled={loading}
-            >
-              Login
-            </Button>
-            <Button
-              active
-              appearance="ghost"
-              disabled={loading}
-              onClick={handleGoogleLogin}
-            >
-              Google Login
-            </Button>
-          </form>
-        </Panel>
-      </PanelGroup>
+    <>
+      <Panel>
+        <form id="login-form" onSubmit={handleLogin}>
+          <label htmlFor="username">Email (will be your username)</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="hello@world.com"
+            value={state.username}
+            autoFocus
+            required
+            onChange={handleChange}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            placeholder="donthackme"
+            name="password"
+            value={state.password}
+            required
+            onChange={handleChange}
+          />
+          <Button active appearance="primary" type="submit" disabled={loading}>
+            <AiOutlineLogin />
+            Login
+          </Button>
+          <Button
+            active
+            appearance="ghost"
+            disabled={loading}
+            onClick={handleGoogleLogin}
+          >
+            <AiFillGoogleCircle /> Google Login
+          </Button>
+        </form>
+      </Panel>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
-    </React.Fragment>
+    </>
   );
 };

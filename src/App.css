@@ -1,6 +1,7 @@
 body {
   background-color: #0f131a;
   color: #e9ebf0;
+  text-shadow: 0.1em 0.1em 0.2em#0f131a35;
 }
 
 #root {
@@ -12,14 +13,14 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #e9ebf0;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #333;
+  color: #c3c5c9;
   text-decoration: none;
   cursor: pointer;
 }
@@ -47,14 +48,18 @@ input {
 
 .rs-container {
   display: flex;
+  flex: 1 100%;
   flex-flow: column nowrap;
-  justify-content: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .rs-header {
   text-align: center;
   text-transform: uppercase;
+}
+
+.rs-header h2 {
+  margin-bottom: 1em;
 }
 
 .rs-navbar {
@@ -63,10 +68,17 @@ input {
 }
 
 .rs-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
   text-align: center;
 }
 
 .rs-footer {
+  display: flex;
+  justify-content: space-around;
   font-size: small;
   text-align: center;
   margin: 0.5em 0;
@@ -81,14 +93,14 @@ input {
 }
 
 .rs-panel {
-  width: 30em;
+  width: 55vw;
   height: auto;
-  border: 1px solid white !important; /* Using !important to override RSuite styles */
+  border: 1px solid #e9ebf0 !important; /* Using !important to override RSuite styles */
   margin: 1em 0;
 }
 
 .rs-panel-heading {
-  background: #e3e3e3;
+  background: #e9ebf0;
   text-align: center;
   font-weight: bold;
 }
@@ -99,6 +111,28 @@ input {
 }
 
 .rs-panel-body img {
-  width: 100%;
+  display: block;
+  width: 25em;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button svg {
+  font-size: 1em;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+.rs-btn-ghost {
+  color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+  border-color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+}
+
+.rs-btn-primary {
+  color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+  border-color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+  text-shadow: 0.1em 0.1em 0.2em#0f131a6b;
 }
