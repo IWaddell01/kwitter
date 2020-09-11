@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "./UpdateProfile.css";
-import { actions } from "../../redux/actions/updateprofile";
+
+import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
+import "./UpdateProfile.css";
+
 import "rsuite/dist/styles/rsuite-default.css";
 import { Button, Alert } from "rsuite";
 
@@ -22,7 +24,7 @@ export const UpdateProfile = () => {
 
   const handleUpdateProfile = (event) => {
     event.preventDefault();
-    dispatch(actions.updateProfile(state));
+    dispatch(updateProfile(state));
     // clear out inputs on submit
     setState({
       displayName: "",
@@ -65,8 +67,8 @@ export const UpdateProfile = () => {
           value={state.about}
           onChange={handleChange}
         />
-        
-          {/* Still need to connect set profile pic endpoint         */}
+
+        {/* Still need to connect set profile pic endpoint         */}
         {/*<label htmlFor="fileUpload">Set Profile Picture</label>
         <input type="file" id="fileUpload" /> */}
 
