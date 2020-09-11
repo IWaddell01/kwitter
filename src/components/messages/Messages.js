@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
 import "./Messages.css";
 import "rsuite/dist/styles/rsuite-default.css";
-import { Panel, PanelGroup } from "rsuite";
+import { Panel } from "rsuite";
 
 export const Messages = () => {
   const messageFeed = useSelector((state) => state.messages.message);
@@ -17,19 +17,17 @@ export const Messages = () => {
   }, [dispatch]);
 
   return (
-    <React.Fragment>
-      <Panel>
-        {messageFeed &&
-          messageFeed.messages.map((data) => (
-            <div>
-              <Panel key={uuid()} header={'" ' + data.text + ' "'}>
-                User Name: {data.username} <br />
-                Date: {data.createdAt} <br />
-              </Panel>
-              <br />
-            </div>
-          ))}
-      </Panel>
-    </React.Fragment>
+    <>
+      {messageFeed &&
+        messageFeed.messages.map((data) => (
+          <div>
+            <Panel key={uuid()} header={'" ' + data.text + ' "'}>
+              User Name: {data.username} <br />
+              Date: {data.createdAt} <br />
+            </Panel>
+            <br />
+          </div>
+        ))}
+    </>
   );
 };
