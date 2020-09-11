@@ -1,8 +1,6 @@
-#update-profile {
-  display: flex;
-  flex-flow: column nowrap;
+#update-profile input {
+  width: 25vw;
 }
-
 .aboutInput {
   height: 15vh;
 }

@@ -1,6 +1,7 @@
 body {
   background-color: #0f131a;
   color: #e9ebf0;
+  text-shadow: 1px 1px 1px#0f131a6b;
 }
 #root {
   display: flex;
@@ -54,6 +55,10 @@ input {
 .rs-header {
   text-align: center;
   text-transform: uppercase;
+}
+
+.rs-header h2 {
+  margin-bottom: 1em;
 }
 
 .rs-navbar {
