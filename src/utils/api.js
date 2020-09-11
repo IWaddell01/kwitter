@@ -108,7 +108,7 @@ class API {
     }
   }
 
-  //Update Profile
+  // Update Profile
   async updateProfile({ password, about, displayName, username }) {
     try {
       const result = await this.axiosInstance.patch(`/users/${username}`, {
