@@ -1,35 +1,83 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+import { updateProfile } from "../../redux/actions/updateProfile";
+import { Loader } from "../loader";
 import "./UpdateProfile.css";
+
 import "rsuite/dist/styles/rsuite-default.css";
-import { Button } from "rsuite";
+import { Button, Alert } from "rsuite";
 
 export const UpdateProfile = () => {
+  const { loading, error } = useSelector((state) => ({
+    loading: state.auth.loading,
+    error: state.auth.error,
+  }));
+
+  const dispatch = useDispatch();
+
+  const [state, setState] = useState({
+    displayName: "",
+    password: "",
+    about: "",
+  });
+
+  const handleUpdateProfile = (event) => {
+    event.preventDefault();
+    dispatch(updateProfile(state));
+    // clear out inputs on submit
+    setState({
+      displayName: "",
+      password: "",
+      about: "",
+    });
+    Alert.success("Profile Updated!");
+  };
+
+  const handleChange = (event) => {
+    const inputName = event.target.name;
+    const inputValue = event.target.value;
+    setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
+  };
+
   return (
     <>
-      <form id="update-profile" onSubmit="">
-        <label htmlFor="username">Display Name</label>
+      <form id="update-profile" onSubmit={handleUpdateProfile}>
+        <label htmlFor="displayName">New Display Name:</label>
         <input
           type="text"
           name="displayName"
           placeholder="John Doe"
+          value={state.displayName}
+          onChange={handleChange}
         />
-        <label htmlFor="displayName">Display Name</label>
-        <input
-          type="text"
-          name="displayName"
-          placeholder="John Lennon"
-        />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">New Password:</label>
         <input
           type="password"
           name="password"
           placeholder="p@55w0rd"
+          value={state.password}
+          onChange={handleChange}
         />
-        <Button appearance="primary" type="submit" >
-          Sign Up
+        <label htmlFor="about">Set About:</label>
+        <input
+          type="text"
+          name="about"
+          placeholder="Set your profile about"
+          value={state.about}
+          onChange={handleChange}
+        />
+
+        {/* Still need to connect set profile pic endpoint         */}
+        {/*<label htmlFor="fileUpload">Set Profile Picture</label>
+        <input type="file" id="fileUpload" /> */}
+
+        <Button appearance="primary" type="submit">
+          Submit
         </Button>
       </form>
+      {loading && <Loader />}
+      {error && <p style={{ color: "red" }}>{error.message}</p>}
     </>
   );
 };

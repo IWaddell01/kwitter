@@ -89,7 +89,7 @@ class API {
   async users() {
     try {
       const result = await this.axiosInstance.get("/users?limit=5");
-      console.log("test")
+      console.log("test");
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -101,6 +101,21 @@ class API {
   async username(username) {
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Update User
+  async updateUser({ password, about, displayName, username }) {
+    try {
+      const result = await this.axiosInstance.patch(`/users/${username}`, {
+        password,
+        about,
+        displayName,
+      });
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -132,7 +147,7 @@ class API {
     }
   }
 
-    async likes (messageId) {
+  async likes(messageId) {
     console.log(messageId);
     try {
       const result = await this.axiosInstance.post("/likes", {
