@@ -36,7 +36,7 @@ export const Username = () => {
           Member Since: <strong>{userData.user.createdAt}</strong> <br />
           <hr />
           <Link to="/updateprofile">
-            <Button appearance="ghost" block>
+            <Button appearance="primary" block>
               Update Profile
             </Button>
           </Link>
