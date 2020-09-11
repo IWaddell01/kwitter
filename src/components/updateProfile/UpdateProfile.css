@@ -1,5 +1,4 @@
 #update-profile {
-    display: flex;
-    flex-direction: column;
-    max-width: 20em;
+  display: flex;
+  flex-flow: column nowrap;
 }
