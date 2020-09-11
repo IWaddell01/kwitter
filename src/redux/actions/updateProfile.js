@@ -6,8 +6,9 @@ export const UPDATE_PROFILE_FAILURE = "UPDATE_PROFILE_FAILURE";
 
 export const updateProfile = (credentials) => async (dispatch, getState) => {
   try {
+    const username = getState().auth.username;
     dispatch({ type: UPDATE_PROFILE });
-    const payload = await api.updateProfile(credentials);
+    const payload = await api.updateProfile(credentials, username);
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
     dispatch({ type: UPDATE_PROFILE_SUCCESS, payload });
   } catch (err) {
