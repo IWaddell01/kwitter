@@ -19,7 +19,7 @@ export const Username = () => {
     <>
       {/* Wrap in conditional render to end null errors */}
       {userData && (
-        <Panel header={"Name: " + userData.user.displayName}>
+        <Panel header={"Welcome to Kwitter, " + userData.user.displayName}>
           <img
             src={
               "https://kwitter-api.herokuapp.com" +
