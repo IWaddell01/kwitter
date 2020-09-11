@@ -6,7 +6,7 @@ import { Loader } from "../loader";
 import "./UpdateProfile.css";
 
 import "rsuite/dist/styles/rsuite-default.css";
-import { Button, Alert } from "rsuite";
+import { Button, Alert, PanelGroup, Panel } from "rsuite";
 
 export const UpdateProfile = () => {
   const { loading, error } = useSelector((state) => ({
@@ -42,40 +42,44 @@ export const UpdateProfile = () => {
 
   return (
     <>
-      <form id="update-profile" onSubmit={handleUpdateProfile}>
-        <label htmlFor="displayName">New Display Name:</label>
-        <input
-          type="text"
-          name="displayName"
-          placeholder="John Doe"
-          value={state.displayName}
-          onChange={handleChange}
-        />
-        <label htmlFor="password">New Password:</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="p@55w0rd"
-          value={state.password}
-          onChange={handleChange}
-        />
-        <label htmlFor="about">Set About:</label>
-        <input
-          type="text"
-          name="about"
-          placeholder="Set your profile about"
-          value={state.about}
-          onChange={handleChange}
-        />
+      <PanelGroup>
+        <Panel>
+          <form id="update-profile" onSubmit={handleUpdateProfile}>
+            <label htmlFor="displayName">New Display Name:</label>
+            <input
+              type="text"
+              name="displayName"
+              placeholder="John Doe"
+              value={state.displayName}
+              onChange={handleChange}
+            />
+            <label htmlFor="password">New Password:</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="p@55w0rd"
+              value={state.password}
+              onChange={handleChange}
+            />
+            <label htmlFor="about">Set About:</label>
+            <input
+              type="text"
+              name="about"
+              placeholder="Set your profile about"
+              value={state.about}
+              onChange={handleChange}
+            />
 
-        {/* Still need to connect set profile pic endpoint         */}
-        {/*<label htmlFor="fileUpload">Set Profile Picture</label>
+            {/* Still need to connect set profile pic endpoint         */}
+            {/*<label htmlFor="fileUpload">Set Profile Picture</label>
         <input type="file" id="fileUpload" /> */}
 
-        <Button appearance="primary" type="submit">
-          Submit
-        </Button>
-      </form>
+            <Button appearance="primary" type="submit">
+              Submit
+            </Button>
+          </form>
+        </Panel>
+      </PanelGroup>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
     </>
