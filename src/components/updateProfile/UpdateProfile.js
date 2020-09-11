@@ -45,6 +45,7 @@ export const UpdateProfile = () => {
   const setPic = async (event) => {
     event.preventDefault();
     const pictureUrl = new FormData(picture.current);
+    // eslint-disable-next-line no-unused-vars
     const results = await api.setProfilePic(user, pictureUrl);
     dispatch(username(user));
     Alert.success("Profile photo updated!");
