@@ -109,13 +109,13 @@ class API {
   }
 
   // Update Profile
-  async updateProfile({ password, about, displayName, username }) {
+  async updateProfile(credentials, username) {
+    // console.log({ password, about, displayName });
     try {
-      const result = await this.axiosInstance.patch(`/users/${username}`, {
-        password,
-        about,
-        displayName,
-      });
+      const result = await this.axiosInstance.patch(
+        `/users/${username}`,
+        credentials
+      );
       return result;
     } catch (err) {
       helpMeInstructor(err);
