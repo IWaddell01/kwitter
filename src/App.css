@@ -1,7 +1,7 @@
 body {
   background-color: #0f131a;
   color: #e9ebf0;
-  text-shadow: 0.1em 0.1em 0.2em#0f131a6b;
+  text-shadow: 0.1em 0.1em 0.2em#0f131a35;
 }
 
 #root {
@@ -95,12 +95,12 @@ input {
 .rs-panel {
   width: 55vw;
   height: auto;
-  border: 1px solid white !important; /* Using !important to override RSuite styles */
+  border: 1px solid #e9ebf0 !important; /* Using !important to override RSuite styles */
   margin: 1em 0;
 }
 
 .rs-panel-heading {
-  background: #e3e3e3;
+  background: #e9ebf0;
   text-align: center;
   font-weight: bold;
 }
@@ -129,4 +129,10 @@ button {
 .rs-btn-ghost {
   color: #e9ebf0 !important; /* Using !important to override RSuite styles */
   border-color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+}
+
+.rs-btn-primary {
+  color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+  border-color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+  text-shadow: 0.1em 0.1em 0.2em#0f131a6b;
 }
