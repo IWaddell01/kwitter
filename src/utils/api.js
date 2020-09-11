@@ -133,8 +133,9 @@ class API {
       throw err;
     }
   }
-  //Set Profile Picture
-  async setProfilePic (username, picture) {
+
+  // Set Profile Pic
+  async setProfilePic(username, picture) {
     try {
       const result = await this.axiosInstance.put(
         "/users/" + username + "/picture",

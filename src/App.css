@@ -58,6 +58,12 @@ input {
   text-transform: uppercase;
 }
 
+.rs-header em {
+  text-align: right;
+  text-transform: lowercase;
+  margin: 5em;
+}
+
 .rs-header h2 {
   margin-bottom: 1em;
 }
