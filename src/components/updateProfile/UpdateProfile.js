@@ -10,8 +10,8 @@ import { Button, Alert, PanelGroup, Panel } from "rsuite";
 
 export const UpdateProfile = () => {
   const { loading, error } = useSelector((state) => ({
-    loading: state.auth.loading,
-    error: state.auth.error,
+    loading: state.updateProfile.loading,
+    error: state.updateProfile.error,
   }));
 
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ export const UpdateProfile = () => {
               onChange={handleChange}
             />
 
-            {/* Still need to connect set profile pic endpoint         */}
+            {/* TODO: Still need to connect set profile pic endpoint         */}
             {/*<label htmlFor="fileUpload">Set Profile Picture</label>
         <input type="file" id="fileUpload" /> */}
 
@@ -79,7 +79,7 @@ export const UpdateProfile = () => {
             </Button>
           </form>
         </Panel>
-        
+
         {loading && <Loader />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
       </PanelGroup>

@@ -97,3 +97,8 @@ input {
   text-align: left;
   font-weight: bold;
 }
+
+.rs-panel-body img {
+  width: 100%;
+  height: auto;
+}

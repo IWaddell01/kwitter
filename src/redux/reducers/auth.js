@@ -15,6 +15,7 @@ import {
 const INITIAL_STATE = {
   isAuthenticated: "",
   username: "",
+  token: "",
   loading: false,
   error: "",
 };
@@ -49,7 +50,9 @@ export const authReducer = (state = { ...INITIAL_STATE }, action) => {
     case LOGIN_GOOGLE_SUCCESS:
       return {
         ...INITIAL_STATE,
-        isAuthenticated: action.payload,
+        isAuthenticated: action.payload.token,
+        token: action.payload.token,
+        username: action.payload.username,
         loading: false,
       };
     case LOGIN_GOOGLE_FAILURE:
