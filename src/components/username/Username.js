@@ -24,7 +24,7 @@ export const Username = () => {
             <img src={"https://kwitter-api.herokuapp.com" + userData.user.pictureLocation} width="100" height="100"/><br />
             <hr />
             Username/Email: <strong>{userData.user.username}</strong> <br />
-            About Member: <strong>{userData.user.about}</strong> <br />
+            About: <strong>{userData.user.about}</strong> <br />
             Member Since: <strong>{userData.user.createdAt}</strong> <br />
             <hr />
             <Link to="/updateprofile"><Button appearance="ghost" block>Update Profile</Button></Link>

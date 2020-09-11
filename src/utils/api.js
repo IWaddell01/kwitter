@@ -88,7 +88,7 @@ class API {
   // Users List
   async users() {
     try {
-      const result = await this.axiosInstance.get("/users?limit=5");
+      const result = await this.axiosInstance.get("/users?limit=250");
       console.log("test");
       return result;
     } catch (err) {
@@ -108,8 +108,8 @@ class API {
     }
   }
 
-  // Update User
-  async updateUser({ password, about, displayName, username }) {
+  // Update Profile
+  async updateProfile({ password, about, displayName, username }) {
     try {
       const result = await this.axiosInstance.patch(`/users/${username}`, {
         password,
