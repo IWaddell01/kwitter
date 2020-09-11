@@ -53,7 +53,7 @@ export const UpdateProfile = () => {
   return (
     <>
       <Panel>
-        <form id="update-profile" onSubmit={handleUpdateProfile}>
+        <form id="updateProfile-form" onSubmit={handleUpdateProfile}>
           <label htmlFor="displayName">New Display Name:</label>
           <input
             type="text"
@@ -72,6 +72,7 @@ export const UpdateProfile = () => {
           />
           <label htmlFor="about">Set About:</label>
           <input
+            className="aboutInput"
             type="text"
             name="about"
             placeholder="Set your profile about"
