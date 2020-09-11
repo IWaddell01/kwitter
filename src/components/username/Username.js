@@ -25,6 +25,7 @@ export const Username = () => {
               "https://kwitter-api.herokuapp.com" +
               userData.user.pictureLocation
             }
+            alt="User Profile Pic"
             width="100"
             height="100"
           />

@@ -3,6 +3,7 @@ body {
   color: #e9ebf0;
   text-shadow: 0.1em 0.2em 0.2em#0f131a6b;
 }
+
 #root {
   display: flex;
   flex-flow: column nowrap;

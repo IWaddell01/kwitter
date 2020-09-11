@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import api from "../../utils/api";
+import { username } from "../../redux/actions/username";
 import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
 import "./UpdateProfile.css";
-
 import "rsuite/dist/styles/rsuite-default.css";
 import { Button, Alert, Panel } from "rsuite";
 
 export const UpdateProfile = () => {
-  const { loading, error } = useSelector((state) => ({
+  const { user, loading, error } = useSelector((state) => ({
+    user: state.auth.username,
     loading: state.updateProfile.loading,
     error: state.updateProfile.error,
   }));
 
   const dispatch = useDispatch();
+  const picture = useRef(null);
 
   const [state, setState] = useState({
     displayName: "",
@@ -40,6 +42,14 @@ export const UpdateProfile = () => {
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
   };
 
+  const setPic = async (event) => {
+    event.preventDefault();
+    const pictureUrl = new FormData(picture.current);
+    const results = await api.setProfilePic(user, pictureUrl);
+    dispatch(username(user));
+    Alert.success("Profile photo updated!");
+  };
+
   return (
     <>
       <Panel>
@@ -62,24 +72,25 @@ export const UpdateProfile = () => {
           />
           <label htmlFor="about">Set About:</label>
           <input
-            className="aboutInput"
             type="text"
             name="about"
             placeholder="Set your profile about"
             value={state.about}
             onChange={handleChange}
           />
-
-          {/* TODO: Still need to connect set profile pic endpoint         */}
-          {/*<label htmlFor="fileUpload">Set Profile Picture</label>
-        <input type="file" id="fileUpload" /> */}
-
           <Button appearance="primary" type="submit">
-            Submit
+            Update Profile
+          </Button>
+        </form>
+        <hr />
+        <h4>Set Profile Picture</h4>
+        <form ref={picture} onSubmit={setPic}>
+          <input className="upload" type="file" name="picture"></input>
+          <Button appearance="primary" type="submit" block>
+            Upload My Picture
           </Button>
         </form>
       </Panel>
-
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
     </>

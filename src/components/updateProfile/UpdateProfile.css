@@ -4,3 +4,12 @@
 .aboutInput {
   height: 15vh;
 }
+
+h4 {
+  text-align: center;
+}
+
+.upload {
+  width: 100%;
+  text-align: center;
+}
