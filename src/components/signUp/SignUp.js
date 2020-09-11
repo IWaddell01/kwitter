@@ -47,7 +47,7 @@ export const SignUp = ({ signUp }) => {
             <input
               type="text"
               name="username"
-              placeholder="user@email.com"
+              placeholder="hello@world.com"
               value={state.username}
               autoFocus
               required
@@ -67,7 +67,7 @@ export const SignUp = ({ signUp }) => {
             <input
               type="password"
               name="password"
-              placeholder="p@55w0rd"
+              placeholder="donthackme"
               value={state.password}
               required
               onChange={handleChange}

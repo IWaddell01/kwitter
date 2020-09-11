@@ -18,17 +18,18 @@ export const Messages = () => {
 
   return (
     <React.Fragment>
-      {messageFeed &&
-        messageFeed.messages.map((data) => (
-          <PanelGroup key={uuid()}>
+      <Panel>
+        {messageFeed &&
+          messageFeed.messages.map((data) => (
             <div>
-              <Panel header={'" ' + data.text + ' "'} >
+              <Panel key={uuid()} header={'" ' + data.text + ' "'}>
                 User Name: {data.username} <br />
                 Date: {data.createdAt} <br />
               </Panel>
+              <br />
             </div>
-          </PanelGroup>
-        ))}
+          ))}
+      </Panel>
     </React.Fragment>
   );
 };

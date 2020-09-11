@@ -18,17 +18,18 @@ export const Users = () => {
 
   return (
     <React.Fragment>
-      {userList &&
-        userList.users.map((data) => (
-          <PanelGroup>
+      <Panel>
+        {userList &&
+          userList.users.map((data) => (
             <div key={uuid()} className="usersList">
               <Panel header={"Username: " + data.username}>
                 Display Name: {data.displayName} <br />
                 Member Since: {data.createdAt} <br />
               </Panel>
+              <br />
             </div>
-          </PanelGroup>
-        ))}
+          ))}
+      </Panel>
     </React.Fragment>
   );
 };

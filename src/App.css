@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #e9ebf0;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -46,9 +46,9 @@ input {
 
 .rs-container {
   display: flex;
+  flex: 1 100%;
   flex-flow: column nowrap;
-  justify-content: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .rs-header {
@@ -62,10 +62,17 @@ input {
 }
 
 .rs-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
   text-align: center;
 }
 
 .rs-footer {
+  display: flex;
+  justify-content: space-around;
   font-size: small;
   text-align: center;
   margin: 0.5em 0;
@@ -73,28 +80,30 @@ input {
 
 .rs-panel-group {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-basis: 100%;
 }
 
 .rs-panel {
-  width: 30em;
-  height: auto;
-  border: 1px solid white !important; /* Using !important to override RSuite styles */
-  margin: 1em 0;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 100%;
+  border: 1px solid #e9ebf0 !important; /* Using !important to override RSuite styles */
+  padding: 1em;
 }
 
 .rs-panel-heading {
   background: #e3e3e3;
   text-align: center;
   font-weight: bold;
+  overflow: hidden;
+  max-width: 35ch;
 }
 
 .rs-panel-body {
   text-align: left;
-  font-weight: bold;
 }
 
 .rs-panel-body img {
@@ -108,4 +117,9 @@ button svg {
 
 button {
   text-transform: uppercase;
+}
+
+.rs-btn-ghost {
+  color: #e9ebf0 !important; /* Using !important to override RSuite styles */
+  border-color: #e9ebf0 !important; /* Using !important to override RSuite styles */
 }

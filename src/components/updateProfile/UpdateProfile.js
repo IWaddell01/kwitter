@@ -63,6 +63,7 @@ export const UpdateProfile = () => {
             />
             <label htmlFor="about">Set About:</label>
             <input
+            className="aboutInput"
               type="text"
               name="about"
               placeholder="Set your profile about"
