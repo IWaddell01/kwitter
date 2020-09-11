@@ -56,7 +56,7 @@ export const SignUp = ({ signUp }) => {
           <input
             type="text"
             name="displayName"
-            placeholder="John Lennon"
+            placeholder="John Doe"
             value={state.displayName}
             autoFocus
             required

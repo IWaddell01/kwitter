@@ -66,11 +66,11 @@ export const UpdateProfile = () => {
           <input
             type="password"
             name="password"
-            placeholder="p@55w0rd"
+            placeholder="donthackme"
             value={state.password}
             onChange={handleChange}
           />
-          <label htmlFor="about">Set About:</label>
+          <label htmlFor="about">Update About Information:</label>
           <input
             className="aboutInput"
             type="text"
