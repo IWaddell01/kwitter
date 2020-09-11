@@ -5,6 +5,7 @@ export const UpdateProfileScreen = () => (
   <>
     <MenuContainer />
     <h2>Update Profile:</h2>
+    <hr />
     <UpdateProfileContainer />
   </>
 );
