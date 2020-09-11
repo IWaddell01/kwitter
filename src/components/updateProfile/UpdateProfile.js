@@ -48,6 +48,7 @@ export const UpdateProfile = () => {
     const results = await api.setProfilePic(user, pictureUrl);
     dispatch(username(user));
     Alert.success("Profile photo updated!");
+    // dispatch(push("/home")); // navigate to some route
   };
 
   return (

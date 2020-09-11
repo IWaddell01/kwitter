@@ -12,10 +12,8 @@ export const CreateMessageScreen = () => (
       <Header>
         <MenuContainer />
         <h2>Create message</h2>
-        <strong>
-          Remember, posting online is "forever" <br />
-          -- happy posting
-        </strong>
+        <strong>Remember, posting online is "forever" </strong> <br />
+        <em>-- happy posting</em>
       </Header>
       <Content>
         <CreateMessageContainer />

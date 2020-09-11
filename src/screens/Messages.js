@@ -9,6 +9,11 @@ export const MessagesScreen = () => (
       <Header>
         <MenuContainer />
         <h2>Message Feed</h2>
+        <strong>
+          Take a deep breath and explore/look into the infinite abyss!
+        </strong>
+        <br />
+        <em>Keep scrolling for more posts...</em>
       </Header>
       <Content>
         <MessagesContainer />

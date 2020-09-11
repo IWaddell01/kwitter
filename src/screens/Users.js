@@ -9,6 +9,8 @@ export const UsersScreen = () => (
       <Header>
         <MenuContainer />
         <h2>List of Users</h2>
+        <strong>Best friends "forever" </strong> <br />
+        <em>-- end ever</em>
       </Header>
       <Content>
         <UsersContainer />
