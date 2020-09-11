@@ -89,7 +89,6 @@ class API {
   async users() {
     try {
       const result = await this.axiosInstance.get("/users?limit=250");
-      console.log("test");
       return result;
     } catch (err) {
       helpMeInstructor(err);
