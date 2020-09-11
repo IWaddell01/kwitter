@@ -109,11 +109,12 @@ input {
 }
 
 .rs-panel-body {
-  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .rs-panel-body img {
-  width: 100%;
+  width: 15em;
   height: auto;
 }
 
