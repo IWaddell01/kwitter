@@ -79,9 +79,10 @@ export const UpdateProfile = () => {
             </Button>
           </form>
         </Panel>
+        
+        {loading && <Loader />}
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
       </PanelGroup>
-      {loading && <Loader />}
-      {error && <p style={{ color: "red" }}>{error.message}</p>}
     </>
   );
 };
