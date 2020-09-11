@@ -77,8 +77,8 @@ class API {
   // Users List
   async users() {
     try {
-      const result = await this.axiosInstance.get("/users?limit=5");
-      console.log("test")
+      const result = await this.axiosInstance.get("/users?limit=250");
+      console.log("test");
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -90,6 +90,21 @@ class API {
   async username(username) {
     try {
       const result = await this.axiosInstance.get(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  //Update Profile
+  async updateProfile({ password, about, displayName, username }) {
+    try {
+      const result = await this.axiosInstance.patch(`/users/${username}`, {
+        password,
+        about,
+        displayName,
+      });
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -121,7 +136,7 @@ class API {
     }
   }
 
-    async likes (messageId) {
+  async likes(messageId) {
     console.log(messageId);
     try {
       const result = await this.axiosInstance.post("/likes", {
