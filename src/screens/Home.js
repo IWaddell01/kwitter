@@ -4,6 +4,7 @@ import {
   SignUpFormContainer,
   MenuContainer,
 } from "../components";
+import { FooterScreen as Footer } from "./Footer";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
@@ -11,12 +12,12 @@ import "react-tabs/style/react-tabs.css";
 
 import { AiOutlineLogin } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
-import { Footer } from "rsuite";
 
 export const HomeScreen = () => (
   <>
     <MenuContainer />
     <h4>Your favorite microblogging platform</h4>
+
     <Tabs defaultFocus={true} defaultIndex={0}>
       <TabList>
         <Tab>
@@ -28,7 +29,6 @@ export const HomeScreen = () => (
           Sign Up
         </Tab>
       </TabList>
-
       <TabPanel>
         <em>
           <strong>Please enter details to login an acccount.</strong>
@@ -44,6 +44,6 @@ export const HomeScreen = () => (
         <SignUpFormContainer />
       </TabPanel>
     </Tabs>
-    <Footer>Kwitter - Team S - SE Q2</Footer>
+    <Footer />
   </>
 );

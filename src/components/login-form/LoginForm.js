@@ -4,7 +4,7 @@ import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
 import "./LoginForm.css";
-import { Button } from "rsuite";
+import { Button, PanelGroup, Panel } from "rsuite";
 
 export const LoginForm = ({ login }) => {
   const { loading, error } = useSelector((state) => ({
@@ -32,31 +32,40 @@ export const LoginForm = ({ login }) => {
 
   return (
     <React.Fragment>
-      <form id="login-form" onSubmit={handleLogin}>
-        <label htmlFor="username">Email (will be your username)</label>
-        <input
-          type="text"
-          name="username"
-          placeholder="user@email.com"
-          value={state.username}
-          autoFocus
-          required
-          onChange={handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          placeholder="p@55w0rd"
-          name="password"
-          value={state.password}
-          required
-          onChange={handleChange}
-        />
-        <Button active appearance="primary" type="submit" disabled={loading}>
-          Login
-        </Button>
-      </form>
+      <PanelGroup>
+        <Panel>
+          <form id="login-form" onSubmit={handleLogin}>
+            <label htmlFor="username">Email (will be your username)</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="user@email.com"
+              value={state.username}
+              autoFocus
+              required
+              onChange={handleChange}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              placeholder="p@55w0rd"
+              name="password"
+              value={state.password}
+              required
+              onChange={handleChange}
+            />
 
+            <Button
+              active
+              appearance="primary"
+              type="submit"
+              disabled={loading}
+            >
+              Login
+            </Button>
+          </form>
+        </Panel>
+      </PanelGroup>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
     </React.Fragment>
