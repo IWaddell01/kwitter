@@ -101,3 +101,11 @@ input {
   width: 100%;
   height: auto;
 }
+
+button svg {
+  font-size: 1em;
+}
+
+button {
+  text-transform: uppercase;
+}

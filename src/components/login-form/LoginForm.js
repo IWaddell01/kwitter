@@ -5,6 +5,7 @@ import { Loader } from "../loader";
 
 import "./LoginForm.css";
 import { Button, PanelGroup, Panel } from "rsuite";
+import { AiFillGoogleCircle, AiOutlineLogin } from "react-icons/ai";
 
 export const LoginForm = ({ login }) => {
   const { loading, error } = useSelector((state) => ({
@@ -75,6 +76,7 @@ export const LoginForm = ({ login }) => {
               type="submit"
               disabled={loading}
             >
+              <AiOutlineLogin />
               Login
             </Button>
             <Button
@@ -83,7 +85,7 @@ export const LoginForm = ({ login }) => {
               disabled={loading}
               onClick={handleGoogleLogin}
             >
-              Google Login
+              <AiFillGoogleCircle /> Google Login
             </Button>
           </form>
         </Panel>
