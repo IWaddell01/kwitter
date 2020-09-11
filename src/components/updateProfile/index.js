@@ -1,0 +1,1 @@
+export { UpdateProfile as UpdateProfileContainer } from "./UpdateProfile"

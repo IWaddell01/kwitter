@@ -6,6 +6,11 @@ export const LOGIN_SUCCESS = "AUTH/LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "AUTH/LOGIN_FAILURE";
 export const LOGOUT = "AUTH/LOGOUT";
 
+// AUTH CONSTANTS GOOGLE LOGIN
+export const LOGIN_GOOGLE = "AUTH/LOGIN_GOOGLE";
+export const LOGIN_GOOGLE_SUCCESS = "AUTH/LOGIN_GOOGLE_SUCCESS";
+export const LOGIN_GOOGLE_FAILURE = "AUTH/LOGIN_GOOGLE_FAILURE";
+
 // AUTH CONSTANTS SIGNUP
 export const SIGN_UP = "AUTH/SIGN_UP";
 export const SIGN_UP_SUCCESS = "AUTH/SIGN_UP_SUCCESS";
@@ -29,6 +34,14 @@ const login = (credentials) => async (dispatch, getState) => {
       payload: err.message,
     });
   }
+};
+
+// Google Login
+export const loginGoogle = (data) => {
+  return {
+    type: LOGIN_GOOGLE_SUCCESS,
+    payload: data,
+  };
 };
 
 // Logout
@@ -63,6 +76,7 @@ const signUp = (credentials) => async (dispatch, getState) => {
 // END AUTH ACTIONS
 export const actions = {
   login,
+  loginGoogle,
   logout,
   signUp,
 };

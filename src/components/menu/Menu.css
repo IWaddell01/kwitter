@@ -1,9 +1,7 @@
 #menu {
   display: flex;
-  /* flex-flow: column nowrap; */
   justify-content: space-around;
   align-items: center;
-  width: 100vw;
 }
 
 #menu-links a {

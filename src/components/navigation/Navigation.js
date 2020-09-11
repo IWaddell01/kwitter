@@ -8,6 +8,7 @@ import {
   MessagesScreen,
   CreateMessageScreen,
   UsersScreen,
+  UpdateProfileScreen,
 } from "../../screens/";
 import { ConnectedRoute } from "../connected-route/ConnectedRoute";
 export const Navigation = () => (
@@ -37,6 +38,10 @@ export const Navigation = () => (
         path="/createmessage"
         component={CreateMessageScreen}
       />
+
+      {/* update user profile page*/}
+      <ConnectedRoute exact path="/updateprofile" component={UpdateProfileScreen}/>
+
       {/* users list page */}
       <ConnectedRoute exact path="/users" component={UsersScreen} />
       {/* 404 page */}

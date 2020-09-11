@@ -7,3 +7,4 @@ export * from "./menu";
 export * from "./navigation";
 export * from "./users";
 export * from "./username";
+export * from "./updateProfile"

@@ -1,17 +1,18 @@
 import React from "react";
-import { MessagesContainer, MenuContainer } from "../components";
+import { UpdateProfileContainer, MenuContainer } from "../components";
+
 import { FooterScreen } from "./Footer";
 import { Container, Header, Content, Footer } from "rsuite";
 
-export const MessagesScreen = () => (
+export const UpdateProfileScreen = () => (
   <>
     <Container>
       <Header>
         <MenuContainer />
-        <h2>Message Feed</h2>
+        <h2>Update Profile:</h2>
       </Header>
       <Content>
-        <MessagesContainer />
+        <UpdateProfileContainer />
       </Content>
       <Footer>
         <FooterScreen />

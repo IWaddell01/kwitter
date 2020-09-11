@@ -4,7 +4,7 @@ import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
 import "./SignUp.css";
-import { Button, Alert } from "rsuite";
+import { Button, Alert, Panel } from "rsuite";
 
 export const SignUp = ({ signUp }) => {
   const { loading, error } = useSelector((state) => ({
@@ -39,43 +39,45 @@ export const SignUp = ({ signUp }) => {
   };
 
   return (
-    <React.Fragment>
-      <form id="sign-up" onSubmit={handleSignUp}>
-        <label htmlFor="username">Email (will be your username)</label>
-        <input
-          type="text"
-          name="username"
-          placeholder="user@email.com"
-          value={state.username}
-          autoFocus
-          required
-          onChange={handleChange}
-        />
-        <label htmlFor="displayName">Display Name</label>
-        <input
-          type="text"
-          name="displayName"
-          placeholder="John Lennon"
-          value={state.displayName}
-          autoFocus
-          required
-          onChange={handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="p@55w0rd"
-          value={state.password}
-          required
-          onChange={handleChange}
-        />
-        <Button appearance="primary" type="submit" disabled={loading}>
-          Sign Up
-        </Button>
-      </form>
+    <>
+      <Panel>
+        <form id="sign-up" onSubmit={handleSignUp}>
+          <label htmlFor="username">Email (will be your username)</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="hello@world.com"
+            value={state.username}
+            autoFocus
+            required
+            onChange={handleChange}
+          />
+          <label htmlFor="displayName">Display Name</label>
+          <input
+            type="text"
+            name="displayName"
+            placeholder="John Doe"
+            value={state.displayName}
+            autoFocus
+            required
+            onChange={handleChange}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="donthackme"
+            value={state.password}
+            required
+            onChange={handleChange}
+          />
+          <Button appearance="primary" type="submit" disabled={loading}>
+            Sign Up
+          </Button>
+        </form>
+      </Panel>
       {loading && <Loader />}
       {error && <p style={{ color: "red" }}>{error.message}</p>}
-    </React.Fragment>
+    </>
   );
 };

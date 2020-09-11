@@ -1,8 +1,8 @@
-#createMessage-form {
+#updateProfile-form {
   display: flex;
   flex-flow: column nowrap;
 }
 
-#createMessage-form input {
+#updateProfile-form .aboutInput {
   height: 15vh;
 }

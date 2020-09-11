@@ -10,7 +10,7 @@ import {
 const INITIAL_STATE = {
   loading: false,
   message: null,
-  text: "null",
+  text: null,
   error: "",
 };
 

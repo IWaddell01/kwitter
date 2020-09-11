@@ -49,6 +49,17 @@ class API {
     }
   }
 
+  // Google Login
+  async loginGoogle() {
+    try {
+      const result = await this.axiosInstance.post("/auth/google/login");
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   // Logout
   async logout() {
     try {
@@ -77,7 +88,8 @@ class API {
   // Users List
   async users() {
     try {
-      const result = await this.axiosInstance.get("/users");
+      const result = await this.axiosInstance.get("/users?limit=250");
+      console.log("test");
       return result;
     } catch (err) {
       helpMeInstructor(err);
@@ -91,6 +103,35 @@ class API {
       const result = await this.axiosInstance.get(`/users/${username}`);
       return result;
     } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  // Update Profile
+  async updateProfile(credentials, username) {
+    // console.log({ password, about, displayName });
+    try {
+      const result = await this.axiosInstance.patch(
+        `/users/${username}`,
+        credentials
+      );
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
+  async setProfilePic (username, picture) {
+    try {
+      const result = await this.axiosInstance.put(
+        "/users/" + username + "/picture",
+        picture
+      );
+      return result;
+    } catch (err) {
+      console.log({ err });
       helpMeInstructor(err);
       throw err;
     }
@@ -119,6 +160,20 @@ class API {
       throw err;
     }
   }
+
+  // Likes WIP
+  // async likes(messageId) {
+  //   console.log(messageId);
+  //   try {
+  //     const result = await this.axiosInstance.post("/likes", {
+  //       messageId,
+  //     });
+  //     return result;
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     throw err;
+  //   }
+  // }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
