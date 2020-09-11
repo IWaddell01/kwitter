@@ -2,6 +2,9 @@ import {
   LOGIN,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  LOGIN_GOOGLE,
+  LOGIN_GOOGLE_SUCCESS,
+  LOGIN_GOOGLE_FAILURE,
   LOGOUT,
   SIGN_UP,
   SIGN_UP_SUCCESS,
@@ -37,6 +40,25 @@ export const authReducer = (state = { ...INITIAL_STATE }, action) => {
         error: action.payload,
         loading: false,
       };
+
+    case LOGIN_GOOGLE:
+      return {
+        ...INITIAL_STATE,
+        loading: true,
+      };
+    case LOGIN_GOOGLE_SUCCESS:
+      return {
+        ...INITIAL_STATE,
+        isAuthenticated: action.payload,
+        loading: false,
+      };
+    case LOGIN_GOOGLE_FAILURE:
+      return {
+        ...INITIAL_STATE,
+        error: action.payload,
+        loading: false,
+      };
+
     case LOGOUT:
       return {
         ...INITIAL_STATE,

@@ -45,6 +45,33 @@ input {
   background: #ebebeb1f;
 }
 
+.rs-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 100vw;
+}
+
+.rs-header {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rs-navbar {
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+.rs-content {
+  text-align: center;
+}
+
+.rs-footer {
+  font-size: small;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
 .rs-panel-group {
   display: flex;
   flex-flow: row nowrap;
@@ -67,6 +94,6 @@ input {
 }
 
 .rs-panel-body {
-  display: flex;
-  flex-flow: column nowrap;
+  text-align: left;
+  font-weight: bold;
 }
