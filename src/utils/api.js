@@ -147,18 +147,19 @@ class API {
     }
   }
 
-  async likes(messageId) {
-    console.log(messageId);
-    try {
-      const result = await this.axiosInstance.post("/likes", {
-        messageId,
-      });
-      return result;
-    } catch (err) {
-      helpMeInstructor(err);
-      throw err;
-    }
-  }
+  // Likes WIP
+  // async likes(messageId) {
+  //   console.log(messageId);
+  //   try {
+  //     const result = await this.axiosInstance.post("/likes", {
+  //       messageId,
+  //     });
+  //     return result;
+  //   } catch (err) {
+  //     helpMeInstructor(err);
+  //     throw err;
+  //   }
+  // }
 }
 
 // WARNING.. do not touch below this line if you want to have a good day =]
