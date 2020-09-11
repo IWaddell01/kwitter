@@ -3,7 +3,7 @@ import { authReducer } from "./auth";
 import { usersReducer } from "./users";
 import { usernameReducer } from "./username";
 import { messagesReducer } from "./messages";
-import { updateProfileReducer } from "./updateProfile";
+import { updateProfileReducer } from "./updateprofile";
 
 export default combineReducers({
   auth: authReducer,

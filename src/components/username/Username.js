@@ -21,7 +21,7 @@ export const Username = () => {
       {userData && (
         <PanelGroup>
           <Panel header={"Name: " + userData.user.displayName}>
-            <img src={"https://kwitter-api.herokuapp.com" + userData.user.pictureLocation} width="100" height="100"/><br />
+            <img src={"https://kwitter-api.herokuapp.com" + userData.user.pictureLocation} alt="User Profile Pic" width="100" height="100"/><br />
             <hr />
             Username/Email: <strong>{userData.user.username}</strong> <br />
             About: <strong>{userData.user.about}</strong> <br />

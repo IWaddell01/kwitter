@@ -123,6 +123,20 @@ class API {
     }
   }
 
+  async setProfilePic (username, picture) {
+    try {
+      const result = await this.axiosInstance.put(
+        "/users/" + username + "/picture",
+        picture
+      );
+      return result;
+    } catch (err) {
+      console.log({ err });
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   // Messages
   async messages() {
     try {
