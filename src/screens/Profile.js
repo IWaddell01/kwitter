@@ -11,7 +11,7 @@ export const ProfileScreen = () => (
         <h2>Profile</h2>
         <strong>Let the world know a little bit about yourself.</strong>
         <br />
-        <em>you can be anything you want to be ...on the internet.</em>
+        <em>you can be anything you want to be ...on the internet</em>
       </Header>
       <Content>
         <UsernameContainer />
