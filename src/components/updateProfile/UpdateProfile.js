@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import api from "../../utils/api"
-import { username } from "../../redux/actions/username"
+import { username, delUser } from "../../redux/actions/username"
 import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
 import "./UpdateProfile.css";
@@ -50,6 +50,10 @@ export const UpdateProfile = () => {
     dispatch(username(user));
   };
 
+  const handleDeleteUser = (event) => {
+    dispatch(delUser())
+  }
+
   return (
     <>
       <PanelGroup>
@@ -89,6 +93,10 @@ export const UpdateProfile = () => {
             <input className="upload" type="file" name="picture"></input>
             <Button appearance="primary" type="submit" block>Upload My Picture</Button>
           </form>
+
+          <hr />
+          <h5>Delete your account</h5>
+          <Button appearance="primary" color="red" block onClick={handleDeleteUser}>DELETE ACCOUNT</Button>
         </Panel>
 
         {loading && <Loader />}

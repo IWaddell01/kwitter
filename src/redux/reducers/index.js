@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import { authReducer } from "./auth";
 import { usersReducer } from "./users";
 import { usernameReducer } from "./username";
+import { delUserReducer } from "./username"
 import { messagesReducer } from "./messages";
 import { updateProfileReducer } from "./updateprofile";
 
@@ -11,4 +12,5 @@ export default combineReducers({
   messages: messagesReducer,
   userInfo: usernameReducer,
   updateProfile: updateProfileReducer,
+  deleteUser: delUserReducer,
 });
