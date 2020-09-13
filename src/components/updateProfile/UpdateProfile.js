@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import api from "../../utils/api";
-import { username } from "../../redux/actions/username";
+import api from "../../utils/api"
+import { actions } from "../../redux/actions/auth"
+import { username, delUser } from "../../redux/actions/username"
 import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
 import "./UpdateProfile.css";
@@ -52,6 +53,11 @@ export const UpdateProfile = () => {
     // dispatch(push("/home")); // navigate to some route
   };
 
+  const handleDeleteUser = (event) => {
+    dispatch(delUser())
+    .then(() => {dispatch(actions.logout())})
+  }
+
   return (
     <>
       <Panel>
@@ -92,6 +98,9 @@ export const UpdateProfile = () => {
           <Button appearance="primary" type="submit" block>
             Upload My Picture
           </Button>
+          <hr />
+          <h5>Delete your account</h5>
+          <Button appearance="primary" color="red" block onClick={handleDeleteUser}>DELETE ACCOUNT</Button>
         </form>
       </Panel>
       {loading && <Loader />}

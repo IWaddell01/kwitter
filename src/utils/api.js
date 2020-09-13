@@ -107,6 +107,17 @@ class API {
     }
   }
 
+  // Delete User
+  async delUser(username) {
+    try {
+      const result = await this.axiosInstance.delete(`/users/${username}`);
+      return result;
+    } catch (err) {
+      helpMeInstructor(err);
+      throw err;
+    }
+  }
+
   // Update Profile
   async updateProfile(credentials, username) {
     // console.log({ password, about, displayName });
