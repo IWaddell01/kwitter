@@ -1,18 +1,18 @@
 import React from "react";
-import { SignUpFormContainer, MenuContainer } from "../components";
+import { LoginFormContainer, MenuContainer } from "../components";
 import { FooterScreen } from "./Footer";
 
 import { Container, Header, Content, Footer } from "rsuite";
 
-export const SignUpScreen = () => (
+export const LoginScreen = () => (
   <>
     <Container>
       <Header>
         <MenuContainer />
       </Header>
       <Content>
-        <h2>Sign up for Your favorite microblogging platform</h2>
-        <SignUpFormContainer />
+        <h2>Log into Your favorite microblogging platform</h2>
+        <LoginFormContainer />
       </Content>
       <Footer>
         <FooterScreen />
