@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import { createMessage } from "../../redux/actions/messages";
 import { Loader } from "../loader";
 
@@ -14,6 +16,8 @@ export const CreateMessage = ({ text }) => {
 
   const dispatch = useDispatch();
 
+  let history = useHistory();
+
   const [state, setState] = useState({
     text: "",
   });
@@ -26,6 +30,7 @@ export const CreateMessage = ({ text }) => {
       text: "",
     });
     Alert.success("Post submission successful!");
+    history.push("/messagefeed");
   };
 
   const handleChange = (event) => {
