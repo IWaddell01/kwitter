@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
@@ -11,6 +13,8 @@ export const SignUp = ({ signUp }) => {
     loading: state.auth.loading,
     error: state.auth.error,
   }));
+
+  let history = useHistory();
 
   const dispatch = useDispatch();
 
@@ -30,6 +34,7 @@ export const SignUp = ({ signUp }) => {
       password: "",
     });
     Alert.success("New account created! Please login.");
+    history.push("/login");
   };
 
   const handleChange = (event) => {

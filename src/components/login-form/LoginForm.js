@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import { actions } from "../../redux/actions/auth";
 import { Loader } from "../loader";
 
@@ -13,6 +15,8 @@ export const LoginForm = ({ login }) => {
     error: state.auth.error,
   }));
 
+  let history = useHistory();
+
   const dispatch = useDispatch();
 
   const [state, setState] = useState({
@@ -23,6 +27,7 @@ export const LoginForm = ({ login }) => {
   const handleLogin = (event) => {
     event.preventDefault();
     dispatch(actions.login(state));
+    history.push("/");
   };
 
   const handleChange = (event) => {
@@ -43,6 +48,7 @@ export const LoginForm = ({ login }) => {
         return;
       }
       dispatch(actions.loginGoogle(event.data));
+      history.push("/");
     };
   };
 

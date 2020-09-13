@@ -41,6 +41,7 @@ export const UpdateProfile = () => {
       about: "",
     });
     Alert.success("Profile Updated!");
+    history.push("/");
   };
 
   const handleChange = (event) => {
@@ -56,13 +57,13 @@ export const UpdateProfile = () => {
     const results = await api.setProfilePic(user, pictureUrl);
     dispatch(username(user));
     Alert.success("Profile photo updated!");
-    // dispatch(push("/home")); // navigate to some route
+    history.push("/");
   };
 
   const handleDeleteUser = (event) => {
     dispatch(delUser()).then(() => {
       dispatch(actions.logout());
-      history.push("/signup");
+      history.push("/");
     });
   };
 
