@@ -1,9 +1,14 @@
 import React, { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+
 import api from "../../utils/api";
-import { username } from "../../redux/actions/username";
+
+import { actions } from "../../redux/actions/auth";
+import { username, delUser } from "../../redux/actions/username";
 import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
+
 import "./UpdateProfile.css";
 import "rsuite/dist/styles/rsuite-default.css";
 import { Button, Alert, Panel } from "rsuite";
@@ -24,6 +29,8 @@ export const UpdateProfile = () => {
     about: "",
   });
 
+  let history = useHistory();
+
   const handleUpdateProfile = (event) => {
     event.preventDefault();
     dispatch(updateProfile(state));
@@ -34,6 +41,7 @@ export const UpdateProfile = () => {
       about: "",
     });
     Alert.success("Profile Updated!");
+    history.push("/");
   };
 
   const handleChange = (event) => {
@@ -49,7 +57,14 @@ export const UpdateProfile = () => {
     const results = await api.setProfilePic(user, pictureUrl);
     dispatch(username(user));
     Alert.success("Profile photo updated!");
-    // dispatch(push("/home")); // navigate to some route
+    history.push("/");
+  };
+
+  const handleDeleteUser = (event) => {
+    dispatch(delUser()).then(() => {
+      dispatch(actions.logout());
+      history.push("/");
+    });
   };
 
   return (
@@ -91,6 +106,16 @@ export const UpdateProfile = () => {
           <input className="upload" type="file" name="picture"></input>
           <Button appearance="primary" type="submit" block>
             Upload My Picture
+          </Button>
+          <hr />
+          <h5>Delete your account</h5>
+          <Button
+            appearance="primary"
+            color="red"
+            block
+            onClick={handleDeleteUser}
+          >
+            DELETE ACCOUNT
           </Button>
         </form>
       </Panel>
