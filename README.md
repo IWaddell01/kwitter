@@ -1,3 +1,13 @@
+# Kwitter
+
+Team S
+
+## Deployment URL
+
+<https://kwitter-team-s.netlify.app/>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b6c1cbfa-6bce-4bb5-bce2-fb617199b404/deploy-status)](https://app.netlify.com/sites/kwitter-team-s/deploys)
+
 ## Overview
 
 You will be working in teams to make a clone of a common micro-blogging platform. You will be given a back-end API for you to form your front-end application around.
@@ -29,7 +39,7 @@ An optional starter scaffolding is provided [here.](https://gitlab.com/vstlouis.
 
 An overview of the starting scaffolding architecture can be found in `./dependencygraph.html`
 
-## Getting Started...
+## Getting Started
 
 1. Create a Scrum board (trello, github/gitlab project board, etc.)
    - [trello scrum example](https://trello.com/b/0xzkRjTH/scrum-project-management-board)
