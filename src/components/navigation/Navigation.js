@@ -4,6 +4,7 @@ import {
   HomeScreen,
   ProfileScreen,
   SignUpScreen,
+  LoginScreen, 
   NotFoundScreen,
   MessagesScreen,
   CreateMessageScreen,
@@ -30,6 +31,8 @@ export const Navigation = () => (
       />
       {/* signup page */}
       <ConnectedRoute exact path="/signup" component={SignUpScreen} />
+      {/* login page */}
+      <ConnectedRoute exact path="/login" component={LoginScreen} />
       {/* message feed page */}
       <ConnectedRoute exact path="/messagefeed" component={MessagesScreen} />
       {/* create message page */}
@@ -38,10 +41,12 @@ export const Navigation = () => (
         path="/createmessage"
         component={CreateMessageScreen}
       />
-
       {/* update user profile page*/}
-      <ConnectedRoute exact path="/updateprofile" component={UpdateProfileScreen}/>
-
+      <ConnectedRoute
+        exact
+        path="/updateprofile"
+        component={UpdateProfileScreen}
+      />
       {/* users list page */}
       <ConnectedRoute exact path="/users" component={UsersScreen} />
       {/* 404 page */}
