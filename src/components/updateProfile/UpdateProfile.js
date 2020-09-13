@@ -1,10 +1,14 @@
 import React, { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import api from "../../utils/api"
-import { actions } from "../../redux/actions/auth"
-import { username, delUser } from "../../redux/actions/username"
+
+import api from "../../utils/api";
+
+import { actions } from "../../redux/actions/auth";
+import { username, delUser } from "../../redux/actions/username";
 import { updateProfile } from "../../redux/actions/updateProfile";
 import { Loader } from "../loader";
+
 import "./UpdateProfile.css";
 import "rsuite/dist/styles/rsuite-default.css";
 import { Button, Alert, Panel } from "rsuite";
@@ -24,6 +28,8 @@ export const UpdateProfile = () => {
     password: "",
     about: "",
   });
+
+  let history = useHistory();
 
   const handleUpdateProfile = (event) => {
     event.preventDefault();
@@ -54,9 +60,11 @@ export const UpdateProfile = () => {
   };
 
   const handleDeleteUser = (event) => {
-    dispatch(delUser())
-    .then(() => {dispatch(actions.logout())})
-  }
+    dispatch(delUser()).then(() => {
+      dispatch(actions.logout());
+      history.push("/signup");
+    });
+  };
 
   return (
     <>
@@ -100,7 +108,14 @@ export const UpdateProfile = () => {
           </Button>
           <hr />
           <h5>Delete your account</h5>
-          <Button appearance="primary" color="red" block onClick={handleDeleteUser}>DELETE ACCOUNT</Button>
+          <Button
+            appearance="primary"
+            color="red"
+            block
+            onClick={handleDeleteUser}
+          >
+            DELETE ACCOUNT
+          </Button>
         </form>
       </Panel>
       {loading && <Loader />}

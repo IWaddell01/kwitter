@@ -25,10 +25,10 @@ export const username = () => async (dispatch, getState) => {
 export const delUser = () => async (dispatch, getState) => {
   try {
     const username = getState().auth.username;
-    dispatch({ type: DELETE_USER});
+    dispatch({ type: DELETE_USER });
     const payload = await api.delUser(username);
-    dispatch({ type: DELETE_USER_SUCCESS, payload});
+    dispatch({ type: DELETE_USER_SUCCESS, payload });
   } catch (err) {
-    dispatch({ type: DELETE_USER_FAILURE, payload: err.message})
+    dispatch({ type: DELETE_USER_FAILURE, payload: err.message });
   }
-}
+};
